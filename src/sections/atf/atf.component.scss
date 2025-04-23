@@ -1,0 +1,13 @@
+#mypic{
+    position: absolute;
+    z-index: 10;
+}
+
+.left-section{
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
