@@ -1,12 +1,44 @@
-#mypic{
+$mainBgColor: #262E34;
+$fontLightPurple : #F8F5EC;
+
+h1{
+    font-family: Anta;
+    font-size: 88px;
+    color: $fontLightPurple;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 24px;
+    cursor: default;
+}
+h2{
+    font-family: Josefin Sans;
+    font-size: 40px;
+    color: $fontLightPurple;
+    font-weight: 400;
+    text-align: center;
+    cursor: default;
+}
+
+#mypic {
     display: block;
     background-color: transparent;
-    max-height: 70vh;
+    max-height: 50vh;
+}
+
+.main-container-atf {
+    margin-top: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: clamp(320px, 90%, 1440px);
 }
 
 .left-section {
     position: relative;
-    background-image: url('/assets/img/bg-img/bg-default.png');
+    background-image: url('/assets/img/bg-img/bg-default.png'); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -17,73 +49,55 @@
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-  
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('/assets/img/bg-img/bg-hover.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-      pointer-events: none;
-      z-index: 1;
+    transition: background-image 0.3s ease-in-out;
+
+    &:hover {
+      background-image: url('/assets/img/bg-img/bg-hover.png'); 
     }
-  
-    &:hover::after {
-      opacity: 1;
-    }
-  
-    // Damit der Inhalt über den Hover-Hintergrund kommt:
+
     > * {
       position: relative;
       z-index: 2;
     }
-  }
+}
 
-.fontAnta{
+.fontAnta {
     font-family: 'Anta';
 }
 
-.fontJSans{
+.fontJSans {
     font-family: 'Josefin Sans';
 }
-.logo{
-    top: 20vh;
-    left: 80vw;
-    position: absolute;
+
+.logo {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 66px;
-    height: 73px;    
-    background-color: transparent;   
-    transition: transform 0.1s ease; // nur transform animieren!
+    height: 73px;
+    background-color: transparent;
+    transition: transform 0.1s ease;
     transform-origin: center center;
     will-change: transform;
-    &:hover{
-        transform: scale(1.05);
-    } 
+
+    &:hover {
+      transform: scale(1.10);
+    }
 }
 
-.logo-sign{
+.logo-sign {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    
-    img{
-        background-color: transparent;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    img {
+      background-color: transparent;
     }
 }
-.logo-braces{
+
+.logo-braces {
     background-color: transparent;
     position: relative;
     display: flex;
@@ -91,23 +105,107 @@
     align-items: center;
 }
 
-.logo-lettering{
+.logo-lettering {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: transparent;
+    transition: ease 0.125s;
+    will-change: transform;
 
-    >span{        
-        font-size: 16px;
-        background-color: transparent;
-        color: aliceblue;
-        &:nth-child(2){
-            color: #89BCD9;
+    &:hover > span:nth-child(1) {
+        transform: scale(1.20);     
+        transition: transform 0.2s ease;
+        will-change: transform;       
+    }
+
+    > span {
+      font-size: 16px;
+      background-color: transparent;
+      color: aliceblue;
+      cursor: default;
+
+      &:nth-child(2) {
+        color: #89BCD9;
+      }
+    }
+}
+
+.fw500 {
+    font-weight: 500;
+}
+
+.right-section {
+    height: 70vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+}
+
+.upper-section {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    flex-direction: column;
+    gap: 16px;
+    position: absolute; 
+    right: 0; 
+    &:nth-child(1){
+        right: 50%;
+        height: 89px;
+        width: 38px;
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.125s ease;
+        width: 30px;
+        height: 30px;
+      }
+
+      .hover {
+        opacity: 0;
+      }
+
+      &:hover .hover {
+        opacity: 1;
+      }
+
+      &:hover .default {
+        opacity: 0;
+      }
+    }
+    .arrow-down{
+        img{
+            width: 39px;
+            height: 89px;
         }
     }
     
 }
-.fw500{
-    font-weight: 500;
+
+.lower-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
 }
