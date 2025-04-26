@@ -1,0 +1,13 @@
+$mainBgColor: #262E34;
+$fontLightPurple : #F8F5EC;
+$lightBlue : #89BCD9;
+
+nav{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 104px;
+   width: 100%;
+   background-color: $lightBlue;      
+}
+
