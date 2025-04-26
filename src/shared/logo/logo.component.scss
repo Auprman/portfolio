@@ -59,6 +59,23 @@
         color: #89BCD9;
       }
     }
+    &.light {
+      span {
+        color: #F8F5EC;
+      }
+      span:nth-child(2) {
+        color: #89BCD9;
+      }
+    }
+  
+    &.dark {
+      span {
+        color: #F8F5EC;
+      }
+      span:nth-child(2) {
+        color: #262E34;
+      }
+    }
 }
 
 .fontAnta {

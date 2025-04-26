@@ -61,9 +61,13 @@ $mainBgColor: #262E34;
 $fontLightPurple : #F8F5EC;
 $lightBlue : #89BCD9;
 
+html{
+  scroll-behavior: smooth;
+}
 
-*{
+body{
     background-color: $mainBgColor;
+    margin: 0 auto;   
 }
 
 h1{

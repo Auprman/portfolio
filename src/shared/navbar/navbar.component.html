@@ -1,3 +1,46 @@
-<nav class="navbar-main">    
-    
+<nav [id]="'navbar'" [class.fixed]="isFixed">
+  <app-logo 
+    signSrc="/assets/img/logo/logo-dark.svg"
+    textColor="dark">
+  </app-logo>
+
+  <div class="links-navbar">
+    <a 
+    href="#why-me" 
+    [class.active]="activeLink === 'why-me'" 
+    (click)="setActive('why-me')">
+    Why me
+  </a>
+  <a 
+    href="#" 
+    [class.active]="activeLink === 'skills'" 
+    (click)="setActive('skills')">
+    Skills
+  </a>
+  <a 
+    href="#" 
+    [class.active]="activeLink === 'projects'" 
+    (click)="setActive('projects')">
+    Projects
+  </a>
+  <a 
+    href="#" 
+    [class.active]="activeLink === 'contact'" 
+    (click)="setActive('contact')">
+    Contact
+  </a>
+  </div>
+
+  <div class="language">
+    <a 
+      (click)="setActiveLanguage('de')" 
+      [class.active]="activeLinkLanguage === 'de'">
+      DE
+    </a>
+    <a 
+      (click)="setActiveLanguage('en')" 
+      [class.active]="activeLinkLanguage === 'en'">
+      EN
+    </a>
+  </div>
 </nav>
