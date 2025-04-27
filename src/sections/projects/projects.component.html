@@ -1,6 +1,36 @@
 <section> 
     <h1>My Projects</h1> 
-    <div class="projects">          
+    <div class="project-main-card">
+        <nav>
+            <button (click)="setActiveProject('Join')" class="button">1. Join</button>
+            <button (click)="setActiveProject('El Pollo Loco')" class="button">2. El Pollo Loco</button>
+            <button (click)="setActiveProject('Pokedex')" class="button">3. Pokedex</button>
+            <button (click)="setActiveProject('Ongoing')" class="button">4. Ongoing Porject</button>
+        </nav>
+        <div class= "left-section">
+            <div class="task">
+                <header><img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
+                    About the project
+                     <span>Duration: @if(global.language === 'en'){{{activeProjectData?.durationEn}}}@else {{{activeProjectData?.durationDe}}}</span></header> 
+                <p>{{activeProjectData?.aboutEn}}</p>
+            </div>
+            <div class="task">
+                <header><img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
+                    How I have organised my work process
+                </header>
+                <p>{{activeProjectData?.experienceEn}}</p>
+            </div>
+            <div class="task">
+                <header>
+                    <img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
+                    My group work experience
+                </header>
+                <p>{{activeProjectData?.organizationEn}}</p>
+            </div>
+        </div>
+        <div class="right-section">
+
+        </div>
       
     </div>
 </section>

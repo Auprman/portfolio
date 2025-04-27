@@ -1,5 +1,6 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, OnInit } from '@angular/core';
 import { LogoComponent } from "../logo/logo.component";
+import { GlobalService } from '../../global.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,18 +12,20 @@ import { LogoComponent } from "../logo/logo.component";
 export class NavbarComponent implements OnInit {
   isFixed = false;
   navbarTopOffset = 0;
+  globalLanguage = inject(GlobalService)
 
   constructor(private elRef: ElementRef) {}
 
   activeLink: string = '';
-  activeLinkLanguage: string = 'de';
+  activeLinkLanguage: string = 'en';
 
   setActive(linkName: string) {
-    this.activeLink = linkName;
+    this.activeLink = linkName;    
   }
 
   setActiveLanguage(linkName: string){
     this.activeLinkLanguage = linkName;
+    this.globalLanguage.language = linkName;
   }
   
 

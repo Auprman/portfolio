@@ -15,5 +15,5 @@ import { ContactComponent } from "../sections/contact/contact.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'portfolio';  
 }
