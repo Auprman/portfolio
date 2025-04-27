@@ -1,6 +1,76 @@
+$mainBgColor: #262E34;
+$fontLightPurple : #F8F5EC;
+$lightBlue : #89BCD9;
+$BtnHoverBg  : #F8F5EC1F;
+
+
+h1{
+    font-size: 60px;
+    font-weight: 400;
+    color: $lightBlue;
+}
+
+.location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: $fontLightPurple;
+    font-family: 'Josefin Sans';
+    font-weight: 600;
+}
+
+.fs30-lb{
+    font-size: 30px;
+    color: $lightBlue;
+}
+
 .why-me{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150vh;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    height: 60vh;
+    max-width: clamp(320px, 90%, 1440px);
+}
+
+.text-area{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+    width: 100%;
+    a{
+        font-family: 'Josefin Sans';
+        font-size: 18;
+        color: #89BCD9;
+        background-color: transparent;
+        text-decoration: none;
+        border: 1px solid $lightBlue;
+        border-radius: 30px;
+        padding: 13px 30px;
+        transition: background-color 0.125s ease-in-out;
+
+        &:hover{
+            background-color: $BtnHoverBg;
+        }
+    }
+}
+
+
+
+.text-about-me{
+    width: 30%;
+    p{
+        font-family: 'Josefin Sans';
+        font-size: 18px;
+        color: $fontLightPurple;
+    }   
+}
+
+.button{
+    display: flex;
+    justify-content: flex-end;
 }

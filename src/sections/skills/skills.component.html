@@ -1,1 +1,23 @@
-<p>skills works!</p>
+<section> 
+    <h1>My Skills</h1> 
+    <div class="skills">          
+        <div class="left-section-skills">
+            @for (skill of skills; track $index) {
+                    <div class="symbol">
+                        <img src="{{skill.path}}" alt="{{skill.name}}-symbol">
+                        <p>{{skill.name}}</p>
+                    </div>
+                }
+        </div>
+        <div class="right-section-current">
+            <p>I am currently learning</p>
+            @for (skill of currentlyLearning; track $index) {
+                <div class="symbol">
+                    <img src="{{skill.path}}" alt="{{skill.name}}-symbol">
+                    <p>{{skill.name}}</p>
+                </div>
+            }
+            <p>I'm always eager to level up my skills, try out new ideas, and stay in the loop with the latest tech. For me, it’s all about finding smarter ways to solve problems and pushing boundaries with fresh, creative solutions.</p>
+        </div>
+    </div>
+</section>
