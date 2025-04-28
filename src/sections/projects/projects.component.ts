@@ -11,7 +11,8 @@ interface Project {
   organizationEn: string,
   organizationDe: string,
   experienceEn: string,
-  experienceDe: string
+  experienceDe: string,
+  imgScreenshot: string,
 }
 @Component({
   selector: 'app-projects',
@@ -38,6 +39,7 @@ export class ProjectsComponent {
     organizationDe: 'Wir haben unser Projekt mit einem Trello-Kanban-Board organisiert, Aufgaben aufgeteilt und gemeinsam To-Dos abgearbeitet. Damit der Code sauber und wartbar bleibt, haben wir auf wiederverwendbare Komponenten, klare Namen und gute Dokumentation gesetzt.',
     experienceEn: 'We were a team of three, and I focused on everything related to creating contacts and linking them to tasks. We supported each other throughout the project, which made working together a lot of fun. We built the app using JavaScript, HTML, CSS, and Google Firebase.',
     experienceDe: 'Wir waren ein Team von drei Leuten, und ich habe mich um alles rund um die Erstellung von Kontakten und deren Verknüpfung mit Aufgaben gekümmert. Durch die enge Zusammenarbeit haben wir uns immer gegenseitig unterstützt – das hat das Projekt besonders spannend und spaßig gemacht. Umgesetzt haben wir das Ganze mit JavaScript, HTML, CSS und Google Firebase.',
+    imgScreenshot: '/assets/img/bg-img/screenshot-join.png',
 
   },
   {
@@ -50,7 +52,7 @@ export class ProjectsComponent {
     organizationDe: 'Wir haben unser Projekt mit einem Trello-Kanban-Board organisiert, Aufgaben aufgeteilt und gemeinsam To-Dos abgearbeitet. Damit der Code sauber und wartbar bleibt, haben wir auf wiederverwendbare Komponenten, klare Namen und gute Dokumentation gesetzt.',
     experienceEn: 'We were a team of three, and I focused on everything related to creating contacts and linking them to tasks. We supported each other throughout the project, which made working together a lot of fun. We built the app using JavaScript, HTML, CSS, and Google Firebase.',
     experienceDe: 'Wir waren ein Team von drei Leuten, und ich habe mich um alles rund um die Erstellung von Kontakten und deren Verknüpfung mit Aufgaben gekümmert. Durch die enge Zusammenarbeit haben wir uns immer gegenseitig unterstützt – das hat das Projekt besonders spannend und spaßig gemacht. Umgesetzt haben wir das Ganze mit JavaScript, HTML, CSS und Google Firebase.',
-    
+    imgScreenshot: '/assets/img/bg-img/screenshot-sharky.png',
   },
   {
     projectname: 'Pokedex',
@@ -62,7 +64,7 @@ export class ProjectsComponent {
     organizationDe: 'Wir haben unser Projekt mit einem Trello-Kanban-Board organisiert, Aufgaben aufgeteilt und gemeinsam To-Dos abgearbeitet. Damit der Code sauber und wartbar bleibt, haben wir auf wiederverwendbare Komponenten, klare Namen und gute Dokumentation gesetzt.',
     experienceEn: 'We were a team of three, and I focused on everything related to creating contacts and linking them to tasks. We supported each other throughout the project, which made working together a lot of fun. We built the app using JavaScript, HTML, CSS, and Google Firebase.',
     experienceDe: 'Wir waren ein Team von drei Leuten, und ich habe mich um alles rund um die Erstellung von Kontakten und deren Verknüpfung mit Aufgaben gekümmert. Durch die enge Zusammenarbeit haben wir uns immer gegenseitig unterstützt – das hat das Projekt besonders spannend und spaßig gemacht. Umgesetzt haben wir das Ganze mit JavaScript, HTML, CSS und Google Firebase.',
-    
+    imgScreenshot: '/assets/img/bg-img/screenshot-join.png',
   },
   {
     projectname: 'Ongoing',
@@ -74,7 +76,7 @@ export class ProjectsComponent {
     organizationDe: 'Wir haben unser Projekt mit einem Trello-Kanban-Board organisiert, Aufgaben aufgeteilt und gemeinsam To-Dos abgearbeitet. Damit der Code sauber und wartbar bleibt, haben wir auf wiederverwendbare Komponenten, klare Namen und gute Dokumentation gesetzt.',
     experienceEn: 'We were a team of three, and I focused on everything related to creating contacts and linking them to tasks. We supported each other throughout the project, which made working together a lot of fun. We built the app using JavaScript, HTML, CSS, and Google Firebase.',
     experienceDe: 'Wir waren ein Team von drei Leuten, und ich habe mich um alles rund um die Erstellung von Kontakten und deren Verknüpfung mit Aufgaben gekümmert. Durch die enge Zusammenarbeit haben wir uns immer gegenseitig unterstützt – das hat das Projekt besonders spannend und spaßig gemacht. Umgesetzt haben wir das Ganze mit JavaScript, HTML, CSS und Google Firebase.',
-    
+    imgScreenshot: '/assets/img/bg-img/screenshot-coming-soon.png',
   },]
 
 setActiveProject(projectName:string){
