@@ -3,78 +3,88 @@
   
     <div class="project-main-card">
       <nav>
-        <button (click)="setActiveProject('Join')" class="button">1. Join</button>
-        <button (click)="setActiveProject('El Pollo Loco')" class="button">2. El Pollo Loco</button>
-        <button (click)="setActiveProject('Pokedex')" class="button">3. Pokedex</button>
-        <button (click)="setActiveProject('Ongoing')" class="button">4. Ongoing Project</button>
+        <button [class.active]="global.activeProject === 'Join'" (click)="global.setActiveProject('Join')" class="button">1. Join</button>
+        <button [class.active]="global.activeProject === 'El Pollo Loco'" (click)="global.setActiveProject('El Pollo Loco')" class="button">2. El Pollo Loco</button>
+        <button [class.active]="global.activeProject === 'Pokedex'" (click)="global.setActiveProject('Pokedex')" class="button">3. Pokedex</button>
+        <button [class.active]="global.activeProject === 'Ongoing'" (click)="global.setActiveProject('Ongoing')" class="button">4. Ongoing Project</button>
       </nav>
   
       <div class="content-wrapper">
-        <div class="content-inner">
+        <div class="content-inner" [ngClass]="{ 'fade-out': global.isTransitioning }">
               
-        <!-- Linke Seite -->
-        <div class="left-section">
-          
-            <div class="task">
-              <div class="task-header">
-                <div class="bullet-point">
-                  <img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
-                </div>
-                <div class="task-title">
-                  <h3>@if(global.language === 'en'){About the project}@else{Über das Projekt}</h3>
-                  <span>Duration: @if(global.language === 'en'){{{activeProjectData?.durationEn}}}@else{{{activeProjectData?.durationDe}}}</span>
-                </div>
-              </div>
-              <p>@if(global.language === 'en'){{{activeProjectData?.aboutEn}}}@else{{{activeProjectData?.aboutDe}}}</p>
-            </div>
-    
-            <div class="task">
-              <div class="task-header">
-                <div class="bullet-point">
-                  <img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
-                </div>
-                <div class="task-title">
-                  <h3>@if(global.language === 'en'){How I have organised my work process}@else{Meine Organisation des Arbeitsprozesses}</h3>
-                </div>
-              </div>
-              <p>@if(global.language === 'en'){{{activeProjectData?.experienceEn}}}@else{{{activeProjectData?.experienceDe}}}</p>
-            </div>
+          <div class="left-section">
+
             
-            <div class="task">
-              <div class="task-header">
-                <div class="bullet-point">
-                  <img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
+              <div class="task"> 
+                <div class="task-header">
+                  <div class="bullet-point">
+                    <img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
+                  </div>
+                  <div class="task-title">
+                    <h3>@if(global.language === 'en'){{{global.activeProjectData?.headlinesEn?.[0]}}}@else{{{global.activeProjectData?.headlinesDe?.[0]}}}</h3>
+                    <span>@if(global.language === 'en'){{{'Duration: ' + global.activeProjectData?.durationEn}}}@else{{{'Dauer: ' + global.activeProjectData?.durationDe}}}</span>
+                  </div>
                 </div>
-                <div class="task-title">
-                  <h3>@if(global.language === 'en'){My group work experience}@else{Meine Erfahrung in der Teamarbeit}</h3>
+                <p>@if(global.language === 'en'){{{global.activeProjectData?.aboutEn}}}@else{{{global.activeProjectData?.aboutDe}}}</p>
+              </div> 
+      
+              <div class="task">
+                <div class="task-header">
+                  <div class="bullet-point">
+                    <img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
+                  </div>
+                  <div class="task-title">
+                    <h3>@if(global.language === 'en'){{{global.activeProjectData?.headlinesEn?.[1]}}}@else{{{global.activeProjectData?.headlinesDe?.[1]}}}</h3>
+                  </div>
                 </div>
+                <p>@if(global.language === 'en'){{{global.activeProjectData?.experienceEn}}}@else{{{global.activeProjectData?.experienceDe}}}</p>
               </div>
-              <p>@if(global.language === 'en'){{{activeProjectData?.organizationEn}}}@else{{{activeProjectData?.organizationDe}}}</p>
+              
+              <div class="task">
+                <div class="task-header">
+                  <div class="bullet-point">
+                    <img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
+                  </div>
+                  <div class="task-title">
+                    <h3>@if(global.language === 'en'){{{global.activeProjectData?.headlinesEn?.[2]}}}@else{{{global.activeProjectData?.headlinesDe?.[2]}}}</h3>
+                  </div>
+                </div>
+                <p>@if(global.language === 'en'){{{global.activeProjectData?.organizationEn}}}@else{{{global.activeProjectData?.organizationDe}}}</p>
+              </div>
             </div>
-    
-          </div> <!-- Ende left-section -->
-    
-          <!-- Rechte Seite -->
+
           <div class="right-section">
-            <div class="tools">
-              <!-- Icons für JavaScript, CSS, HTML -->
-              <img src="pfad/js-icon.svg" alt="JavaScript">
-              <img src="pfad/css-icon.svg" alt="CSS">
-              <img src="pfad/html-icon.svg" alt="HTML">
+            <div class="tools">             
+               <p>@if(global.language === 'en'){Technologies}@else{Technologien}</p>
+              <div class="icons-tools">@for (technologie of global.activeProjectData?.usedTechnologies; track $index) { 
+                <img src="/assets/img/icons-skills/{{technologie}}.svg" alt="{{technologie}}">
+              }
+              </div>
             </div>
-            <div class="project-image">
-              <img src="{{activeProjectData?.imgScreenshot}}" alt="Project Screenshot">
+            <div class="project-image" (mouseenter)="hover = true" (mouseleave)="hover = false">
+              <img
+                class="static-img"
+                [class.hidden]="hover"
+                [src]="global.activeProjectData?.imgScreenshot"
+                alt="Project Screenshot"
+              />
+              <img
+                class="gif-img"
+                [class.hidden]="!hover"
+                [src]="global.activeProjectData?.gifProject"
+                alt="Project GIF"
+              />
             </div>
-            <div class="links">
+            <div [class.hidden]="global.activeProject === 'Ongoing'" class="links">
               <a href="link-zur-live-seite" target="_blank">Live Test</a>
               <a href="link-zu-github" target="_blank">GitHub</a>
             </div>
-          </div> <!-- Ende right-section -->
+          </div> 
     
         </div>
-      </div> <!-- Ende content-wrapper -->
+      </div> 
   
-    </div> <!-- Ende project-main-card -->
+    </div> 
     
   </section>
   

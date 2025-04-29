@@ -12,7 +12,7 @@ import { GlobalService } from '../../global.service';
 export class NavbarComponent implements OnInit {
   isFixed = false;
   navbarTopOffset = 0;
-  globalLanguage = inject(GlobalService)
+  global = inject(GlobalService)
 
   constructor(private elRef: ElementRef) {}
 
@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
 
   setActiveLanguage(linkName: string){
     this.activeLinkLanguage = linkName;
-    this.globalLanguage.language = linkName;
+    this.global.language = linkName;
   }
   
 
