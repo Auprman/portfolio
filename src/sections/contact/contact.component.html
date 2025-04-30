@@ -1,1 +1,10 @@
-<p>contact works!</p>
+<section>
+    <div class="headline">
+        <h2>Contact me</h2>
+        <a class="arrow-up"(mouseover)="isHover = true" (mouseout)="isHover = false" href="#atf">
+        <img 
+        [src]="isHover ? '/assets/img/arrows/arrow-up-hover.png' : '/assets/img/arrows/arrow-up-default.png'" 
+        alt="Arrow up">
+        </a>
+    </div>
+</section>

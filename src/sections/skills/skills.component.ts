@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { GlobalService } from '../../global.service';
 
 interface Skill {
   name: string;
-  path: string;
+  path: string; 
 } 
 @Component({
   selector: 'app-skills',
@@ -11,6 +12,10 @@ interface Skill {
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+
+  global = inject(GlobalService);
+  descriptionDe:string = 'Ich bin stets motiviert, meine Fähigkeiten weiterzuentwickeln, neue Ideen auszuprobieren und mich mit aktuellen Technologien auseinanderzusetzen. Dabei ist es mir wichtig, kreative und durchdachte Lösungen zu finden, die über den Standard hinausgehen.';
+  descriptionEn:string = 'Im always eager to level up my skills, try out new ideas, and stay in the loop with the latest tech. For me, it’s all about finding smarter ways to solve problems and pushing boundaries with fresh, creative solutions.';
   
   skills: Skill[] = [{
     name: 'Angular',

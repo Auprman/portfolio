@@ -32,7 +32,7 @@ h1{
 .left-section-skills{
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 35%;
     p{
         font-family: 'Josefin Sans';
         color: $lightBlue;
@@ -48,27 +48,47 @@ h1{
     padding: 16px;
 }
 
-.right-section-current{
+.skill-symbols{
+    display: flex;    
+    p{
+        font-size: 14px !important;
+        padding: 8px 0;
+    }
+}
+
+.right-section{
     display: flex;
-    background-image: url('/assets/img/bg-img/skill-ellipse.svg');
+    min-width: 50%;
+}
+
+.right-section-current {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/assets/img/bg-img/project-bg-default.svg');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 400px;
     width: 100%;
-    p{
+    padding: 56px 0; 
+    transition: 0.2s all ease-in-out;
+
+    &:hover {
+        background-image: url('/assets/img/bg-img/references-bg-hover.svg');        
+    }
+
+    p {
         font-family: 'Josefin Sans';
         color: $fontLightPurple;
-        font-size: 14px;
+        font-size: 18px;
         margin: 0px;
         max-width: 200px;
         text-align: center;
     }
-    img{
+
+    img {
         height: 32px;
-        width: 32px;
+        width: 32px;        
     }
 }

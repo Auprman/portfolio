@@ -1,1 +1,15 @@
-<p>references works!</p>
+<section>
+    <h2>Need a teamplayer? Here what my colleagues said about me</h2>
+    <div class="ref-main">        
+        @for (ref of refs; track $index) {
+            <div class="single-ref">
+            <!-- <img src="/assets/img/bg-img/references-bg-default.svg" alt="Ref-Background-default" class="ref-bg">
+            <img src="/assets/img/bg-img/references-bg-hover.svg" alt="Ref-Background-default" class="ref-bg"> -->
+            <h3>{{ref.name}}</h3>
+            <p>@if (global.language === 'en') {Project }@else {Projekt }<span>{{ref.project}}</span></p>
+            <p>@if (global.language === 'en') {{{ref.referenceEn}}}@else {{{ref.referenceDe}}} </p>
+            <a href="{{ref.link}}">Linked in profil</a>
+        </div>
+        }        
+    </div>
+</section>

@@ -1,0 +1,70 @@
+$mainBgColor: #262E34;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;  
+}
+.ref-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+}
+.single-ref{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    padding: 56px;
+    margin: 0 8px;
+    background-image: url('/assets/img/bg-img/references-bg-default.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: 0.2s all ease-in-out;
+    &:hover{
+        background-image: url('/assets/img/bg-img/references-bg-hover.svg');
+        cursor: default;
+    }
+}
+h3{
+    font-family: 'Josefin Sans';
+    font-size: 28px;
+    font-weight: 500;
+    color: $lightBlue;
+    margin: 0;
+}
+p{
+    font-family: 'Josefin Sans';
+    font-size: 18px;
+    color: $fontLightPurple;
+    max-width: 300px;
+    span{
+        color: $lightBlue;
+    }
+}
+h2{
+    font-family: 'Josefin Sans';
+    font-size: 32px;
+    color: $lightBlue;
+    font-weight: 400;
+}
+a{
+    font-family: 'Josefin Sans';
+    font-size: 16px;
+    color: $lightBlue;
+    margin: 16px 0px;
+    transition: 0.2s color ease-in-out;
+    &:hover{
+        color: $fontLightPurple;
+    }
+}

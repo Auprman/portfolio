@@ -9,15 +9,19 @@
                     </div>
                 }
         </div>
-        <div class="right-section-current">
-            <p>I am currently learning</p>
-            @for (skill of currentlyLearning; track $index) {
-                <div class="symbol">
-                    <img src="{{skill.path}}" alt="{{skill.name}}-symbol">
-                    <p>{{skill.name}}</p>
-                </div>
-            }
-            <p>I'm always eager to level up my skills, try out new ideas, and stay in the loop with the latest tech. For me, it’s all about finding smarter ways to solve problems and pushing boundaries with fresh, creative solutions.</p>
+        <div class="right-section">
+            <div class="right-section-current">
+                <p>@if (global.language === 'en') {I am currently learning}@else {Momentan lerne ich}</p>
+                <div class="skill-symbols">
+                    @for (skill of currentlyLearning; track $index) {
+                        <div class="symbol">
+                            <img src="{{skill.path}}" alt="{{skill.name}}-symbol">
+                            <p>{{skill.name}}</p>
+                        </div>
+                    }
+                </div>            
+                <p>@if (global.language === 'en') {{{descriptionEn}}}@else {{{descriptionDe}}}</p>
+            </div>
         </div>
     </div>
 </section>
