@@ -19,7 +19,7 @@ export class ProjectsComponent {
  hover:boolean = false;
 
 ngOnInit(){
-  console.log('Selected language: ' + this.global.language);
+  
 }
 
 

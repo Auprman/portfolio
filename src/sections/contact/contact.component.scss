@@ -1,14 +1,234 @@
+$mainBgColor: #262E34;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+$error: #E44C36;
+
 section{
     display: flex;
+    justify-content: center;
+    line-height: 120%;
 }
 
 .arrow-up{
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    position: absolute;
     transition: 0.2s all ease-in-out;
+    right: 0;
+    top: 16px;
     &:hover{
         opacity: 1;       
     }    
 }
 
+.contact-main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width:60%;
+    max-width: 1440px;
+}
+
+.headline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+    h2{
+        font-family: 'Anta';
+        font-size: 54px;
+        color: $lightBlue;
+    }    
+}
+
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;   
+    p{
+        font-family: 'Josefin Sans';
+        font-size: 18px;
+        color: $fontLightPurple;
+    }
+}
+
+
+span{ 
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    color: $fontLightPurple;
+}
+
+.contact-me-text{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.contact-data{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 40px;
+    width: 50%;
+    gap: 24px;
+}
+.email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    a{        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: $fontLightPurple;
+        span{ 
+            font-family: 'Josefin Sans';
+            font-size: 20px;
+            color: $fontLightPurple;
+        }
+        img{
+            margin-right: 24px;
+        }
+        &:hover{
+            color: $lightBlue;
+            span{
+                color: $lightBlue;
+            }
+        }
+    }
+}
+.phone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        cursor: default;
+        span{
+            color: $lightBlue ;
+        }
+        
+    }
+    img{
+        margin-right: 24px;
+    }
+}
+
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  }
+
+.input-data{
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.form-field {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+  
+    label {
+      position: absolute;
+      top: -20px;
+      left: 12px;
+      background-color:transparent;
+      padding: 0 4px;
+      font-size: 14px;
+      color: $lightBlue;
+    }
+  
+    input,
+    textarea {
+      width: 100%;
+      background-color: $projectBg;
+      padding: 12px;
+      padding-top: 20px;
+      border: 1px solid $lightBlue;
+      border-radius: 30px;
+      font-size: 18px;
+      font-family: 'Josefin Sans';
+      resize: none;
+      color: $fontLightPurple;
+      &:autofill{
+        background-color: red;
+      }
+  
+      &:focus {
+        outline: none;
+        border-color: $lightBlue;
+      }
+    }
+  
+    .error {
+        font-family: 'Josefin Sans';
+      color: $error;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  }
+
+  
+  .form-field.checkbox {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+  
+    input[type='checkbox'] {
+      width: 16px;
+      height: 16px;
+    }
+  
+    label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Josefin Sans';      
+      font-size: 14px;
+      color: $fontLightPurple;
+      a{
+        color: $lightBlue;
+        text-decoration: none;
+        transition: 0.2s color ease-in-out;
+        &:hover{
+            color: $fontLightPurple;
+        }
+      }
+    }
+  
+    .error {
+      margin-left: 24px;
+      font-size: 12px;
+      color: $error;
+    }
+  }
+
+  button{
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Josefin Sans';
+    color: $fontLightPurple;
+    border-radius: 30px;
+    background-color: $mainBgColor;
+    border: 1px solid $lightBlue;
+    padding: 13px 30px;
+    &:hover{
+        background-color: $projectBg;
+    }
+  }

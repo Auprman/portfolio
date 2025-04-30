@@ -65,6 +65,10 @@ html{
   scroll-behavior: smooth;
 }
 
+p, span{
+  line-height: 120%;
+}
+
 body{
     background-color: $mainBgColor;
     margin: 0 auto;   
