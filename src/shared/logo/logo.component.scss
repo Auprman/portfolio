@@ -1,3 +1,11 @@
+$mainBgColor: #262E34;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+$error: #E44C36;
+
+
 .logo {
     display: flex;
     justify-content: center;
@@ -52,11 +60,11 @@
     > span {
       font-size: 16px;
       background-color: transparent;
-      color: aliceblue;
+      color: $fontLightPurple;
       cursor: default;
 
       &:nth-child(2) {
-        color: #89BCD9;
+        color: $lightBlue;
       }
     }
     &.light {
@@ -84,4 +92,5 @@
 
 .fontJSans {
     font-family: 'Josefin Sans';
+    font-weight: 300;
 }

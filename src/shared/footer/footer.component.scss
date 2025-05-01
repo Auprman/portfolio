@@ -1,0 +1,48 @@
+$mainBgColor: #262E34;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+$error: #E44C36;
+
+
+
+.footer-section {
+    background-color: $lightBlue; 
+    width: 100%;
+  }
+  
+  footer {
+    font-family: 'Josefin Sans';
+    display: flex;
+    justify-content: center; 
+    padding: 32px 0; 
+    height: 180px;
+    a{
+        text-decoration: none;
+        color: $mainBgColor;
+        transition: 0.2s all ease-in-out;
+
+        &:hover{
+            color: $fontLightPurple;
+        }
+    }
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 24px; 
+  }
+
+  .link-wrapper{
+
+    img{
+        margin: 0 8px;
+    }
+    
+  }
+  

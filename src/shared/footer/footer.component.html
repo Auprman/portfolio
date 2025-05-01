@@ -1,0 +1,24 @@
+<section class="footer-section">
+  <footer>
+    <div class="footer-content">
+      <a href="#contact">Legal notice</a>
+
+      <app-logo 
+        signSrc="/assets/img/logo/logo-dark.svg"
+        textColor="dark">
+      </app-logo>
+
+      <div class="link-wrapper">
+        <a href="#atf" (mouseenter)="githubHovered = true" (mouseleave)="githubHovered = false">
+          <img [src]="githubHovered ? '/assets/img/social media buttons/github/gh-white.png' : '/assets/img/social media buttons/github/gh-dark.png'" alt="GitHub">
+        </a>
+        <a href="#atf" (mouseenter)="mailHovered = true" (mouseleave)="mailHovered = false">
+          <img [src]="mailHovered ? '/assets/img/social media buttons/mail/mail-white.png' : '/assets/img/social media buttons/mail/mail-dark.png'" alt="Mail">
+        </a>
+        <a href="#atf" (mouseenter)="linkedinHovered = true" (mouseleave)="linkedinHovered = false">
+          <img [src]="linkedinHovered ? '/assets/img/social media buttons/linkedin/li-white.png' : '/assets/img/social media buttons/linkedin/li-dark.png'" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+  </footer>
+</section>
