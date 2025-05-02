@@ -1,5 +1,9 @@
 $mainBgColor: #262E34;
-$fontLightPurple : #F8F5EC;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+$error: #E44C36;
 
 h1{
     font-family: Anta;
@@ -20,10 +24,12 @@ h2{
 }
 
 #mypic {
-    display: block;
-    background-color: transparent;
-    max-height: 50vh;
-}
+    max-height: 40vh;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    object-fit: cover; 
+  }
 
 .main-container-atf {
     margin-top: 41px;
@@ -49,7 +55,6 @@ h2{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
     transition: background-image 0.3s ease-in-out;
 
     &:hover {
@@ -139,12 +144,46 @@ h2{
             height: 89px;
         }
     }
-    
 }
 
 .lower-section {
     display: flex;
     justify-content: center;
-    width: 100%;
-    
+    width: 100%;    
+}
+@media (max-width:1433px){
+    .links:nth-child(1) {
+        right: 48%;
+    }
+}
+
+@media (max-width:1290px){
+    h1{
+        font-size: 72px;
+    }
+    h2{
+        font-size: 32px;
+    }
+} 
+
+@media (max-width: 1024px) {
+    .main-container-atf{
+        margin-top: 85px;
+        flex-direction: column;
+    }
+    h1{
+        font-size: 56px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    .upper-section{
+        display: none;
+    }
+    .left-section{
+        width: 60vw;
+    }  
+    .right-section{
+        justify-content: flex-start;
+    }
 }

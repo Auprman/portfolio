@@ -15,9 +15,9 @@
                 </div>
                 <div class="contact-data">
                     <div class="email" (mouseover)="mailIsHovered = true" (mouseout)="mailIsHovered = false">                        
-                        <a href="mailto: felixoppermann@outlook.de"><img 
+                        <a href="mailto: mail@felix-oppermann.com"><img 
                             [src]="mailIsHovered ? '/assets/img/icon-contact/mail-hover.svg' : '/assets/img/icon-contact/mail.svg'" alt="Mail">
-                            <span>{{'E-Mail: felixoppermann@outlook.de'}}</span>
+                            <span>{{'E-Mail: mail@felix-oppermann.com'}}</span>
                         </a>
                     </div>
                     <div (mouseover)="phoneIsHovered = true" (mouseout)="phoneIsHovered = false" class="phone">
@@ -33,82 +33,74 @@
                <div class="input-data">
                     <div class="form-field">
                         <label for="email">
-                        <ng-container *ngIf="(contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
-                            Email is required.
+                        <ng-container class="input-error" *ngIf="(contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
+                          <div class="input-error">Email is required.</div>
                         </ng-container>
-                        <ng-container *ngIf="(contactForm.get('email')?.errors?.['email'] && !contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
-                            Invalid email format.
+                        <ng-container class="input-error" *ngIf="(contactForm.get('email')?.errors?.['email'] && !contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
+                            <div class="input-error">Invalid email format.</div>
                         </ng-container>
                         <ng-container *ngIf="!contactForm.get('email')?.errors || (!contactForm.get('email')?.touched && !submitted)">
                             Email
                         </ng-container>
                         </label>
-                        <input id="email" formControlName="email" type="email" />
+                        <input [ngStyle]="contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || submitted) ? { 'border': '1px solid #E44C36' } : null"
+                        id="email" formControlName="email" type="email" />
                     </div>    
                     
                     <div class="form-field">
                         <label for="name">
-                            <ng-container *ngIf="(contactForm.get('name')?.errors?.['required'] && (contactForm.get('name')?.touched || submitted))">
-                            Your Name is required.
+                            <ng-container  *ngIf="(contactForm.get('name')?.errors?.['required'] && (contactForm.get('name')?.touched || submitted))">
+                           <div class="input-error"> Your Name is required.</div>
                             </ng-container>
                             <ng-container *ngIf="!contactForm.get('name')?.errors || (!contactForm.get('name')?.touched && !submitted)">
                             Your name
                             </ng-container>
                         </label>
-                        <input id="name" formControlName="name" type="text" />
+                        <input [ngStyle]="contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || submitted) ? { 'border': '1px solid #E44C36' } : null"
+                         id="name" formControlName="name" type="text" />
                     </div>
                </div>
                
                 <div class="form-field">
                   <label for="message">
-                    {{ (contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted)) ? 'Message is required.' : 'Message' }}
+                    <ng-container  *ngIf="(contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted))">
+                      <div class="input-error">Message is required.</div>
+                       </ng-container>
+                       <ng-container *ngIf="!contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted)">
+                        Message
+                       </ng-container>
                   </label>
-                  <textarea  id="message" formControlName="message" rows="6"></textarea>
+                  <textarea [ngStyle]="contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted) ? { 'border': '1px solid #E44C36' } : null" id="message" formControlName="message" rows="6"></textarea>
                 </div>
 
                 <div class="form-field checkbox">
-                    <input type="checkbox" id="customCheckbox" formControlName="privacyPolicy" hidden  checked="unchecked"/>
-                  
-                    <label
-                      for="customCheckbox"
-                      class="custom-checkbox"
-                      (mouseenter)="isCheckboxHovered = true"
-                      (mouseleave)="isCheckboxHovered = false"
-                    >
-                      <ng-container *ngIf="!contactForm.get('privacyPolicy')?.value">
-                        <img
-                          *ngIf="hasPrivacyError()"
-                          src="/assets/img/icon-contact/pp-error.svg"
-                          alt="Error checkbox"
-                        />
-                        <img
-                          *ngIf="!hasPrivacyError() && isCheckboxHovered"
-                          src="/assets/img/icon-contact/pp-hover.svg"
-                          alt="Checkbox hover"
-                        />
-                        <img
-                          *ngIf="!hasPrivacyError() && !isCheckboxHovered"
-                          src="/assets/img/icon-contact/pp-default.svg"
-                          alt="Unchecked"
-                        />
-                      </ng-container>
-                  
-                      <img
-                        *ngIf="contactForm.get('privacyPolicy')?.value"
-                        src="/assets/img/icon-contact/pp-checked.svg"
-                        alt="Checked"
-                      />
-                  
-                      I've read the <a href="#atf">privacy policy</a> and agree to the processing of my data as outlined.
-                    </label>
-                  
-                    <div class="error" *ngIf="hasPrivacyError()">
-                      Please accept the privacy policy.
-                    </div>
+                  <input 
+                    type="checkbox" 
+                    id="customCheckbox" 
+                    formControlName="privacyPolicy" 
+                    hidden
+                  />
+                
+                  <label
+                    for="customCheckbox"
+                    class="custom-checkbox"                    
+                  >
+                    <img 
+                    (mouseenter)="isCheckboxHovered = true"
+                    (mouseleave)="isCheckboxHovered = false"
+                    [src]="getCheckboxImage()" alt="Checkbox state" 
+                    />                
+                    <p>I've read the <a href="#atf"> privacy policy </a> and agree to the processing of my data as outlined.</p>
+                  </label>
+                
+                  <div class="error" *ngIf="hasPrivacyError()">
+                    Please accept the privacy policy.
                   </div>
+                </div>
                   
-                <button type="submit">Send</button>
-
+                <div class="button-wrapper">
+                  <button [ngClass]="{ 'disabled': contactForm.invalid }" type="submit">Send</button>
+                </div>
               </form>       
 
     </div>

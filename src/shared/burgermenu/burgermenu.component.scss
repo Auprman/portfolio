@@ -1,0 +1,76 @@
+$mainBgColor: #262E34;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+$error: #E44C36;
+
+nav{
+   display: none;
+   justify-content: space-between;
+   align-items: center;
+   height: 85px;
+   width: 100%;
+   background-color: $mainBgColor;
+   position: static;
+   position: absolute;
+   top: 0;
+   bottom: auto;
+   transition: all 0.3s ease;
+   z-index: 1000;
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        bottom: auto;
+      }
+}
+
+.ham-menu{
+    height: 30px;
+    width: 30px;
+    margin-right: 32px;
+    position: relative;
+    cursor: pointer;
+    span{
+        height: 2px;
+        width: 100%;
+        background-color: $fontLightPurple;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s ease;
+        &:nth-child(1){
+            top: 12.5%;
+        }
+        &:nth-child(2){
+            top: 87.5%;
+        }
+    }    
+}
+.ham-menu.active{
+    span:nth-child(1){
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    span:nth-child(2){
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    span:nth-child(3){
+        opacity: 0;
+    }
+}
+.logo{
+    margin: 0 32px;
+    height: 58px;
+    width: 72px;
+}
+
+@media (max-width: 1023px) {
+    nav{
+        display: flex;
+    }
+}

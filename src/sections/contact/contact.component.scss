@@ -47,8 +47,10 @@ section{
 .description{
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;   
+    align-items: flex-start;
+    margin-bottom: 40px;
+     
+
     p{
         font-family: 'Josefin Sans';
         font-size: 18px;
@@ -74,7 +76,7 @@ span{
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-left: 40px;
+    margin: 18px 40px;
     width: 50%;
     gap: 24px;
 }
@@ -151,20 +153,23 @@ form{
       padding: 0 4px;
       font-size: 14px;
       color: $lightBlue;
+      font-family: 'Josefin Sans'; 
     }
   
     input,
     textarea {
       width: 100%;
       background-color: $projectBg;
-      padding: 12px;
-      padding-top: 20px;
+      padding: 20px;
       border: 1px solid $lightBlue;
       border-radius: 30px;
       font-size: 18px;
       font-family: 'Josefin Sans';
       resize: none;
       color: $fontLightPurple;
+      z-index: 990 !important;
+      
+      
       &:autofill{
         background-color: red;
       }
@@ -172,11 +177,12 @@ form{
       &:focus {
         outline: none;
         border-color: $lightBlue;
-      }
+        background-color: $BtnHoverBg;
+      }      
     }
   
     .error {
-        font-family: 'Josefin Sans';
+      font-family: 'Josefin Sans';
       color: $error;
       font-size: 12px;
       margin-top: 4px;
@@ -187,6 +193,7 @@ form{
   .form-field.checkbox {
     display: flex;
     align-items: center;
+    position: relative;
     width: 100%;
     gap: 8px;
   
@@ -213,9 +220,11 @@ form{
     }
   
     .error {
-      margin-left: 24px;
-      font-size: 12px;
+      position: absolute;
+      margin-left: 56px;
+      font-size: 14px;
       color: $error;
+      bottom: -40px;
     }
   }
 
@@ -228,7 +237,37 @@ form{
     background-color: $mainBgColor;
     border: 1px solid $lightBlue;
     padding: 13px 30px;
+    transition: 0.2s all ease-in-out;
     &:hover{
         background-color: $projectBg;
     }
+    &.disabled {
+        opacity: 0.4;
+        border: 1px solid #F8F5EC;
+      }
   }
+  
+  .custom-checkbox img {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+.input-error{
+    color: $error;
+}
+
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    margin-bottom: 200px;
+}
+
+border-red{
+    border-color: $error;
+}
+  

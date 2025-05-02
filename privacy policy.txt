@@ -1,0 +1,2 @@
+Missbrauchsvermeidung und Sicherheit:
+Um den Missbrauch meines Kontaktformulars (z. B. durch automatisierten Spam) zu verhindern, speichere ich beim Absenden des Formulars temporär die IP-Adresse des Absenders. Die IP-Adresse wird ausschließlich zu Sicherheitszwecken verwendet und automatisch nach spätestens einer Stunde gelöscht. Es erfolgt keine Weitergabe an Dritte. Die Verarbeitung erfolgt auf Grundlage meines berechtigten Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO.

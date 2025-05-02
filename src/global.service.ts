@@ -29,6 +29,7 @@ export class GlobalService {
   language:string = 'en';
   isTransitioning = false;
   activeProject: string = 'Join';
+  hamActive:boolean = false;
 
   
 get activeProjectData(): Project | undefined {

@@ -1,12 +1,19 @@
 <section class="footer-section">
   <footer>
     <div class="footer-content">
-      <a href="#contact">Legal notice</a>
+      <div class="left-section-wrapper">
+        <a href="#contact">Legal notice</a>
+        <p>© Felix Oppermann 2025</p>
+      </div>
 
-      <app-logo 
+
+      <a href="#atf" class="logo">
+        <app-logo 
         signSrc="/assets/img/logo/logo-dark.svg"
         textColor="dark">
       </app-logo>
+      </a>
+      
 
       <div class="link-wrapper">
         <a href="#atf" (mouseenter)="githubHovered = true" (mouseleave)="githubHovered = false">

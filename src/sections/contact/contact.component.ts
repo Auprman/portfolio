@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { GlobalService } from '../../global.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NgStyle],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -35,24 +35,36 @@ export class ContactComponent {
   mailTest = true;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://felix-oppermann.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
         'Content-Type': 'text/plain',
-        responseType: 'text',
+        responseType: 'text' as const,
       },
     },
   };
 
   onSubmit() {
     this.submitted = true;
-    
+  
     if (this.contactForm.valid) {
-
-      console.log(this.contactForm);
-      this.contactForm.reset();
-      this.submitted = false;
+      const formData = this.contactForm.value;
+  
+      this.http.post(
+        this.post.endPoint,
+        this.post.body(formData),
+        this.post.options
+      ).subscribe({
+        next: () => {
+          console.log('Mail sent!');
+          this.contactForm.reset();
+          this.submitted = false;
+        },
+        error: (err) => {
+          console.error('Mail send failed:', err);
+        }
+      });
     }
   }
   
@@ -61,6 +73,21 @@ export class ContactComponent {
   hasPrivacyError(): boolean {
     const control = this.contactForm.get('privacyPolicy');
     return !!(control?.invalid && (control?.touched || this.submitted));
+  }
+
+getCheckboxImage(): string {
+    const isChecked = this.contactForm.get('privacyPolicy')?.value;
+    const hasError = this.hasPrivacyError();
+  
+    if (isChecked) {
+      return '/assets/img/icon-contact/pp-checked.svg';
+    } else if (hasError) {
+      return '/assets/img/icon-contact/pp-error.svg';
+    } else if (this.isCheckboxHovered) {
+      return '/assets/img/icon-contact/pp-hover.svg';
+    } else {
+      return '/assets/img/icon-contact/pp-default.svg';
+    }
   }
   
   arrowIsHovered:boolean = false;
