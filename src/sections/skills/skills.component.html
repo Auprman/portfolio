@@ -10,8 +10,11 @@
                 }
         </div>
         <div class="right-section">
-            <div class="right-section-current">
+            <div class="headline-mobil">
                 <p>@if (global.language === 'en') {I am currently learning}@else {Momentan lerne ich}</p>
+            </div>
+            <div class="right-section-current">
+                <p class="headline">@if (global.language === 'en') {I am currently learning}@else {Momentan lerne ich}</p>
                 <div class="skill-symbols">
                     @for (skill of currentlyLearning; track $index) {
                         <div class="symbol">

@@ -2,9 +2,11 @@
     <h1>Why me</h1>
     <div class="text-area">
         <div class="location">
-            <img src="/assets/img/location/location.svg" alt="Location image">
-            <span class="fs30-lb">I am &nbsp;</span>
-            <span>located in Braunschweig..|</span>
+            <img [src]="isMobile ? '/assets/img/location/location-mobil.svg' : '/assets/img/location/location.svg'" alt="Location image">
+            <p>
+                <span class="fs30-lb">I am &nbsp;</span>
+                <span>located in Braunschweig..|</span>
+            </p>
         </div>
         <div class="text-about-me">            
             <p>@if (global.language === 'en'){{{des.descriptionEn}}}@else {{{des.descriptionDe}}}</p>

@@ -18,6 +18,9 @@ h1{
     color: $fontLightPurple;
     font-family: 'Josefin Sans';
     font-weight: 600;
+    img{
+        margin-right: 8px;
+    }
 }
 
 .fs30-lb{
@@ -73,4 +76,43 @@ h1{
 .button{
     display: flex;
     justify-content: flex-end;
+}
+
+@media (max-width: 1024px) {
+    .text-area{
+        flex-direction: column;
+    }
+    .button{
+        display: none;
+    }
+    .text-about-me{
+        width: 80%;
+        p{
+            text-align: center;
+        }
+    }
+    
+}
+
+@media (max-width: 652px) {
+    .why-me{
+        margin: 0 16px;
+    }
+    h1{
+        font-size: 32px;
+    }
+    .location{
+        font-size: 18px;
+        p{
+            text-align: center;
+        }
+        
+        >img{
+            src: url('/assets/img/location/location-mobil.svg');
+            margin-right: 24px;
+        }
+    }
+    .fs30-lb{
+        font-size: 18px;
+    }
 }

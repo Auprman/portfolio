@@ -153,7 +153,7 @@ h2{
 }
 @media (max-width:1433px){
     .links:nth-child(1) {
-        right: 48%;
+        right: 50%;
     }
 }
 
@@ -169,6 +169,7 @@ h2{
 @media (max-width: 1024px) {
     .main-container-atf{
         margin-top: 85px;
+        justify-content: flex-start;
         flex-direction: column;
     }
     h1{
@@ -176,14 +177,47 @@ h2{
     }
     h2{
         font-size: 32px;
+        margin-bottom: 8px;
     }
     .upper-section{
         display: none;
     }
     .left-section{
         width: 60vw;
+        height: auto;
     }  
     .right-section{
         justify-content: flex-start;
+        width: auto;
+        height: auto;
+    }
+    .links{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+        right: 0;
+        &:nth-child(1){
+            height: auto;
+            margin-top: 24px;
+        }
+        a{
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 652px) {
+    h2{
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 380px) {
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 18px;
     }
 }
