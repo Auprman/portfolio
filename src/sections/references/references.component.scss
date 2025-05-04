@@ -68,3 +68,26 @@ a{
         color: $fontLightPurple;
     }
 }
+
+@media (max-width: 1024px) {
+    .ref-main {
+      display: flex;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      padding: 16px;
+      scroll-behavior: smooth;
+      justify-content: flex-start !important;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  
+    .single-ref {
+      min-width: 300px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      margin-right: 16px; // optional Abstand zwischen den Karten
+    }
+  }
+  

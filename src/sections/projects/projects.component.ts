@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class ProjectsComponent { 
   
   global = inject(GlobalService)
- hover:boolean = false;
+  hover:boolean = false;
 
 ngOnInit(){
   

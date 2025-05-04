@@ -132,6 +132,9 @@ nav {
   }
 }
 
+.technologie-mobil{
+  display: none;
+}
 
 .right-section {
   width: 50%;
@@ -153,6 +156,7 @@ nav {
     font-size: 18px;
    }
   }
+
 .icons-tools{
   display: flex;
   gap: 16px;
@@ -164,6 +168,7 @@ nav {
     height: 40px;
   }
 }
+
 .project-image {
   position: relative;
   width: 100%;
@@ -187,7 +192,9 @@ nav {
     pointer-events: none;
   }
 }
-  .links {
+}
+.links,
+.links-mobile {
     display: flex;
     gap: 40px;
     margin-top: 16px;
@@ -215,7 +222,10 @@ nav {
       }
     }
   }
+.links-mobile{
+  display: none;
 }
+
 
 .active{
   background-color: $projectBg !important;
@@ -230,6 +240,45 @@ Responsive Design
 -------------------------*/
 
 @media (max-width: 1024px) {
+
+  .content-inner{
+    flex-direction: column-reverse;
+    padding: 0;
+    overflow: hidden;
+  }
+  .right-section{
+    align-items: flex-start;
+    padding: 0 22px;
+    width: auto;
+  }
+
+  .left-section{
+    padding: 0 22px;
+    width: auto;
+  }
+  .technologie-mobil{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: 'Josefin Sans';
+    flex-direction: column;
+    color:$fontLightPurple;
+    p{
+      margin: 4px 8px;
+    }
+    h1{
+      margin: 8px;
+    }
+  }  
+
+  h1{
+    margin-top: 80px;
+  }
+
+  .tool{
+    display: flex;
+  }
+
   .content-wrapper {
     flex-direction: column;
     align-items: center;
@@ -243,10 +292,26 @@ Responsive Design
   .task p {
     margin-left: 0; 
   }
+
+  nav{    
+    flex-wrap: nowrap;
+  }
+
+  .tools{
+    display: none !important;
+  }
+
+  .links{
+    display: none !important;
+  }
+
+  .links-mobile{
+    display: flex;
+  }
 }
 
 @media (max-width: 600px) {
-  h1 {
+  h1 {    
     font-size: 36px;
   }
 

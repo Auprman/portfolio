@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { GlobalService } from '../../global.service';
 
 interface References{
@@ -20,6 +20,8 @@ interface References{
 export class ReferencesComponent {
   global = inject (GlobalService);
 
+  isMobile:boolean = false;
+
 refs:References[] = [{
   name: 'Bartosz K.',
   project: 'Join',
@@ -40,5 +42,14 @@ refs:References[] = [{
   referenceDe: 'Lorem Deutschum, dolor sit amet consectetur adipisicing elit. Adipisci a quis deserunt dolor nisi quos vero aperiam, rerum officiis quaerat autem, ipsa odit omnis earum non, nam porro praesentium quo enim qui necessitatibus fugiat. Incidunt ullam ducimus deserunt pariatur qui.',
   link: '#why-me',
 }]
+
+@HostListener('window:resize', ['$event'])
+onResize(event: Event) {
+  this.isMobile = window.innerWidth < 1024;
+}
+
+ngOnInit() {
+  this.isMobile = window.innerWidth < 1024;
+}
 
 }

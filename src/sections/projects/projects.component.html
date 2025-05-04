@@ -13,7 +13,6 @@
         <div class="content-inner" [ngClass]="{ 'fade-out': global.isTransitioning }">
               
           <div class="left-section">
-
             
               <div class="task"> 
                 <div class="task-header">
@@ -57,10 +56,23 @@
             <div class="tools">             
                <p>@if(global.language === 'en'){Technologies}@else{Technologien}</p>
               <div class="icons-tools">@for (technologie of global.activeProjectData?.usedTechnologies; track $index) { 
-                <img src="/assets/img/icons-skills/{{technologie}}.svg" alt="{{technologie}}">
-              }
-              </div>
+                <img src="/assets/img/icons-skills/{{technologie}}.svg" alt="{{technologie}}">                
+              }             
+              </div>              
             </div>
+            <div class="technologie-mobil">              
+                <h1>{{global.activeProjectData?.projectname}}</h1>
+              <div class="tool"> 
+                <p>@if(global.language === 'en'){Technologies: }@else{Technologien: } 
+                    @for (spelledOutTech of global.activeProjectData?.technologiesSpelledOut; track $index) {
+                      <span>{{spelledOutTech}}<span *ngIf="!$last">,&nbsp;</span> </span> 
+                    }
+                </p> 
+              </div>
+            
+              <p><span>@if(global.language === 'en'){Duration: }@else{Dauer: }</span>
+                <span>@if(global.language === 'en'){{{global.activeProjectData?.durationEn}}}@else{{{global.activeProjectData?.durationDe}}}</span></p>             
+          </div>
             <div class="project-image" (mouseenter)="hover = true" (mouseleave)="hover = false">
               <img
                 class="static-img"
@@ -81,6 +93,10 @@
             </div>
           </div> 
     
+        </div>
+        <div [class.hidden]="global.activeProject === 'Ongoing'" class="links-mobile">
+          <a href="link-zur-live-seite" target="_blank">Live Test</a>
+          <a href="link-zu-github" target="_blank">GitHub</a>
         </div>
       </div> 
   

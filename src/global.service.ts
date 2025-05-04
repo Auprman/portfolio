@@ -14,6 +14,7 @@ interface Project {
   imgScreenshot: string,
   gifProject: string,
   usedTechnologies: string[],
+  technologiesSpelledOut: string[],
   headlinesEn: string[],
   headlinesDe: string[],
 }
@@ -30,6 +31,7 @@ export class GlobalService {
   isTransitioning = false;
   activeProject: string = 'Join';
   hamActive:boolean = false;
+  isMobile:boolean = false;
 
   
 get activeProjectData(): Project | undefined {
@@ -46,6 +48,8 @@ get activeProjectData(): Project | undefined {
     
   }
 
+  
+
   projects:Project[] = [{
     projectname: 'Join',
     aboutEn: 'A task manager inspired by the Kanban method. Easily create, organize, and move tasks with drag and drop, and assign users and categories seamlessly.',
@@ -59,9 +63,9 @@ get activeProjectData(): Project | undefined {
     imgScreenshot: '/assets/img/bg-img/project-screenshots/join.png',
     gifProject: '/assets/img/bg-img/join.webp',
     usedTechnologies: ['js', 'css', 'html', 'firebase'],
+    technologiesSpelledOut: ['Javascript','CSS','HTML','Firebase'],
     headlinesEn:['About the project','How I have organised my work process','My group work experience'],
-    headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Meine Erfahrung in der Teamarbeit'],
-
+    headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Meine Erfahrung in der Teamarbeit'],  
   },
   {
     projectname: 'El Pollo Loco',
@@ -76,6 +80,7 @@ get activeProjectData(): Project | undefined {
     imgScreenshot: '/assets/img/bg-img/project-screenshots/el-pollo-loco.png',
     gifProject: '/assets/img/bg-img/el-pollo-loco.webp',
     usedTechnologies: ['js', 'css', 'html'],
+    technologiesSpelledOut: ['Javascript','CSS','HTML'],
     headlinesEn:['About the project','How I have organised my work process','Workflow & Organization'],
     headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Arbeitsweise & Organisation'],
   },
@@ -92,6 +97,7 @@ get activeProjectData(): Project | undefined {
     imgScreenshot: '/assets/img/bg-img/project-screenshots/pokedex-screenshot.png',
     gifProject: '/assets/img/bg-img/pokedex.webp',
     usedTechnologies: ['js', 'css', 'html','rest'],
+    technologiesSpelledOut: ['Javascript','CSS', 'HTML', 'REST API'],
     headlinesEn:['About the project','How I have organised my work process','Workflow & Organization'],
     headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Arbeitsweise & Organisation'],
   },
@@ -108,6 +114,7 @@ get activeProjectData(): Project | undefined {
     imgScreenshot: '/assets/img/bg-img/screenshot-coming-soon.png',
     gifProject: '/assets/img/bg-img/join.webp',
     usedTechnologies: ['angular', 'html','css','firebase'],
+    technologiesSpelledOut: ['Angular','HTML','CSS','Firebase'],
     headlinesEn:['About the project','How I have organised my work process','My group work experience'],
     headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Arbeitsweise & Organisation'],
   },]
