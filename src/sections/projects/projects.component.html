@@ -9,7 +9,10 @@
         <button [class.active]="global.activeProject === 'Ongoing'" (click)="global.setActiveProject('Ongoing')" class="button">4. Ongoing Project</button>
       </nav>
   
-      <div class="content-wrapper">
+      <div class="content-wrapper" 
+      [class.brl]="global.activeProject === 'Join' && isMobile"
+      [class.brr]="global.activeProject === 'Ongoing' && isMobile"
+      >
         <div class="content-inner" [ngClass]="{ 'fade-out': global.isTransitioning }">
               
           <div class="left-section">

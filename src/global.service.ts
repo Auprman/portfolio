@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { HostListener, Injectable } from '@angular/core';
+
 
 
 interface Project {
@@ -25,15 +26,19 @@ interface Project {
 
 export class GlobalService {
 
-    constructor() { }
+  constructor() {     
+  }
 
   language:string = 'en';
   isTransitioning = false;
   activeProject: string = 'Join';
   hamActive:boolean = false;
-  isMobile:boolean = false;
+  
+
+
 
   
+
 get activeProjectData(): Project | undefined {
   return this.projects.find(project => project.projectname === this.activeProject);
 }
@@ -45,8 +50,11 @@ get activeProjectData(): Project | undefined {
       this.activeProject = projectName;
       this.isTransitioning = false;      
     }, 200); 
-    
   }
+
+  projectIsActive(current:string){
+    return this.activeProject === current;
+  } 
 
   
 

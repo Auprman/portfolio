@@ -26,7 +26,7 @@ export class ProjectsComponent {
   }
 
 ngOnInit(){
-  
+  this.isMobile = window.innerWidth < 1024;     
 }
 
 
