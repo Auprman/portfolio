@@ -21,7 +21,10 @@
                   </div>
                   <div class="task-title">
                     <h3>@if(global.language === 'en'){{{global.activeProjectData?.headlinesEn?.[0]}}}@else{{{global.activeProjectData?.headlinesDe?.[0]}}}</h3>
-                    <span>@if(global.language === 'en'){{{'Duration: ' + global.activeProjectData?.durationEn}}}@else{{{'Dauer: ' + global.activeProjectData?.durationDe}}}</span>
+                    <span>
+                      @if(global.language === 'en' && !isMobile){{{'Duration: ' + global.activeProjectData?.durationEn}}}
+                      @else if(global.language === 'de' && !isMobile){{{'Dauer: ' + global.activeProjectData?.durationDe}}}
+                    </span>
                   </div>
                 </div>
                 <p>@if(global.language === 'en'){{{global.activeProjectData?.aboutEn}}}@else{{{global.activeProjectData?.aboutDe}}}</p>

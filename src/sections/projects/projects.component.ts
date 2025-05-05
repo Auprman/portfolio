@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { GlobalService } from '../../global.service';
 import { CommonModule } from '@angular/common';
 
@@ -17,6 +17,13 @@ export class ProjectsComponent {
   
   global = inject(GlobalService)
   hover:boolean = false;
+  isMobile:boolean = false;
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.isMobile = window.innerWidth < 1024;
+  }
 
 ngOnInit(){
   

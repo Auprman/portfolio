@@ -267,7 +267,55 @@ form{
     margin-bottom: 200px;
 }
 
-border-red{
+.border-red{
     border-color: $error;
+}
+
+@media (max-width: 1024px) {
+    .arrow-up{
+        display: none;
+    }
+
+    .description{
+        flex-direction: column-reverse;
+    }
+
+    .contact-main{
+        width: 100%;
+        margin: 0 22px;
+    }
+
+    .contact-data{
+        flex-direction: column-reverse;
+        margin: 0;
+        width: auto;
+        span{
+            font-size: 18px;
+        }
+        img{
+            margin-right: 8px;
+        }        
+    }
+
+    .email{
+        a{
+            img{
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .contact-me-text{
+        width: 100%;
+    }
+
+   .input-data{
+    flex-direction: column-reverse;
+   }
+
+   form{
+    padding: 0 22px;
+   }
+
 }
   
