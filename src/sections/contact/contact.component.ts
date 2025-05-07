@@ -75,20 +75,20 @@ export class ContactComponent {
     return !!(control?.invalid && (control?.touched || this.submitted));
   }
 
-getCheckboxImage(): string {
-    const isChecked = this.contactForm.get('privacyPolicy')?.value;
-    const hasError = this.hasPrivacyError();
-  
-    if (isChecked) {
-      return '/assets/img/icon-contact/pp-checked.svg';
-    } else if (hasError) {
-      return '/assets/img/icon-contact/pp-error.svg';
-    } else if (this.isCheckboxHovered) {
-      return '/assets/img/icon-contact/pp-hover.svg';
-    } else {
-      return '/assets/img/icon-contact/pp-default.svg';
+  getCheckboxImage(): string {
+      const isChecked = this.contactForm.get('privacyPolicy')?.value;
+      const hasError = this.hasPrivacyError();
+    
+      if (isChecked) {
+        return '/assets/img/icon-contact/pp-checked.svg';
+      } else if (hasError) {
+        return '/assets/img/icon-contact/pp-error.svg';
+      } else if (this.isCheckboxHovered) {
+        return '/assets/img/icon-contact/pp-hover.svg';
+      } else {
+        return '/assets/img/icon-contact/pp-default.svg';
+      }
     }
-  }
   
   arrowIsHovered:boolean = false;
   mailIsHovered:boolean = false;

@@ -1,6 +1,7 @@
 import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { GlobalService } from '../../global.service';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 
 
@@ -17,17 +18,20 @@ export class ProjectsComponent {
   
   global = inject(GlobalService)
   hover:boolean = false;
-  isMobile:boolean = false;
-
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.isMobile = window.innerWidth < 1024;
+  isMobile = false;
+  
+  private subscription!: Subscription;
+  
+  ngOnInit() {
+    this.isMobile = this.global.isMobile;
+    this.subscription = this.global.isMobile$.subscribe(value => {
+      this.isMobile = value;
+    });
   }
-
-ngOnInit(){
-  this.isMobile = window.innerWidth < 1024;     
-}
+  
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
+  }
 
 
 }

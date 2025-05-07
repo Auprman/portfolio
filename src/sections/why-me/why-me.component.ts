@@ -1,5 +1,6 @@
-import { Component, inject, HostListener } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { GlobalService } from '../../global.service';
+import { Subscription } from 'rxjs';
 
 interface Description{
   descriptionEn: string,
@@ -13,20 +14,25 @@ interface Description{
 })
 
 
-export class WhyMeComponent {
+export class WhyMeComponent implements OnInit, OnDestroy {
 
 global = inject(GlobalService);
-
 isMobile = false;
 
+private subscription!: Subscription;
+
 ngOnInit() {
-  this.isMobile = window.innerWidth <= 652;
+  this.isMobile = this.global.isMobile;
+  this.subscription = this.global.isMobile$.subscribe(value => {
+    this.isMobile = value;
+  });
 }
 
-@HostListener('window:resize', ['$event'])
-onResize(event: any) {
-  this.isMobile = event.target.innerWidth <= 652;
+ngOnDestroy() {
+  this.subscription?.unsubscribe();
 }
+
+
 
 des:Description = {
   descriptionEn: 'Coding means endless learning and creativity for me. I love diving into new challenges, finding smart solutions, and seeing how even the toughest problems can be cracked with the right idea. Whether its building something from scratch or working with clear guidelines — both spark my passion.',

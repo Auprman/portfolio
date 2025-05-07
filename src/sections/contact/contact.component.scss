@@ -270,7 +270,47 @@ form{
     border-color: $error;
 }
 
+ .arrow-up-mobile {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+
+      .icon {
+        position: absolute;
+        top: -134px;
+        left: 0;
+        transition: opacity 0.125s ease;
+        width: 30px;
+        height: 60px;
+      }
+
+      .hover {
+        opacity: 0;
+      }
+
+      &:hover .hover {
+        opacity: 1;
+      }
+
+      &:hover .default {
+        opacity: 0;
+      }
+    }
+    .arrow-down{
+        img{
+            width: 39px;
+            height: 89px;
+        }
+    }
+
+
 @media (max-width: 1024px) {
+
+    h2{
+        font-size: 32px !important;
+    }
+
     .arrow-up{
         display: none;
     }
@@ -301,11 +341,23 @@ form{
             img{
                 margin-right: 8px;
             }
+            span{
+                font-size: 18px;
+            }
         }
     }
 
     .contact-me-text{
         width: 100%;
+        p{
+           font-size: 16px;
+           font-weight: 400; 
+        }
+        
+    }
+
+    .button-wrapper{
+       margin-top: 24px;
     }
 
    .input-data{

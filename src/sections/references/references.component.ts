@@ -1,5 +1,6 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { GlobalService } from '../../global.service';
+import { Subscription } from 'rxjs';
 
 interface References{
   name: string ,
@@ -20,7 +21,20 @@ interface References{
 export class ReferencesComponent {
   global = inject (GlobalService);
 
-  isMobile:boolean = false;
+ isMobile = false;
+ 
+ private subscription!: Subscription;
+ 
+ ngOnInit() {
+   this.isMobile = this.global.isMobile;
+   this.subscription = this.global.isMobile$.subscribe(value => {
+     this.isMobile = value;
+   });
+ }
+ 
+ ngOnDestroy() {
+   this.subscription?.unsubscribe();
+ }
 
 refs:References[] = [{
   name: 'Bartosz K.',
@@ -43,13 +57,6 @@ refs:References[] = [{
   link: '#why-me',
 }]
 
-@HostListener('window:resize', ['$event'])
-onResize(event: Event) {
-  this.isMobile = window.innerWidth < 1024;
-}
 
-ngOnInit() {
-  this.isMobile = window.innerWidth < 1024;
-}
 
 }
