@@ -98,16 +98,6 @@ h1{
     h1{
         padding-top: 220px;
     }
-    
-}
-
-@media (max-width: 652px) {
-    .why-me{
-        margin: 0 16px;
-    }
-    h1{
-        font-size: 32px;
-    }
     .location{
         font-size: 18px;
         p{
@@ -115,11 +105,34 @@ h1{
         }
         
         >img{
-            src: url('/assets/img/location/location-mobil.svg');
             margin-right: 24px;
         }
     }
+    
+}
+
+@media (max-width: 652px) {
+    .why-me{
+        img{
+            padding: 0 22px;
+            margin: 0;
+        }
+    }
+
+    .text-area{
+        justify-content: center;
+        align-items: center ;
+    }
+    
+    h1{
+        font-size: 32px;
+    }
+    
     .fs30-lb{
         font-size: 18px;
     }
 }
+    @media (max-width: 370px) {
+        
+    }    
+    

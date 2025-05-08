@@ -1,8 +1,10 @@
 <div class="main-container-atf">
   
-    <div  class="left-section"
-    [ngClass]="{ 'hide-bg-img': global.hamActive }"
-    >
+    <div class="left-section"
+     [ngClass]="{
+       'hide-bg-img': global.hamActive,
+       'nav-open': global.hamActive && isMobile
+     }">
         <img
         id="mypic"
         [ngClass]="{ 'hide': global.hamActive && isMobile }"
@@ -16,10 +18,8 @@
         src="/assets/img/bg-img/background-mobile-default.svg"
         alt=""
         > 
-        <div class="nav-bar-moblie">
-            <app-navbar-mobile></app-navbar-mobile>
-        </div>            
     </div>
+    <app-navbar-mobile></app-navbar-mobile>
   
     <div class="right-section">
       <div class="upper-section">        

@@ -12,8 +12,7 @@
         signSrc="/assets/img/logo/logo-dark.svg"
         textColor="dark">
       </app-logo>
-      </a>
-      
+      </a>      
 
       <div class="link-wrapper">
         <a href="#atf" (mouseenter)="githubHovered = true" (mouseleave)="githubHovered = false">
@@ -26,6 +25,24 @@
           <img [src]="linkedinHovered ? '/assets/img/social media buttons/linkedin/li-white.png' : '/assets/img/social media buttons/linkedin/li-dark.png'" alt="LinkedIn">
         </a>
       </div>
+
+      <div class="link-wrapper-mobile">
+        <a href="#atf">
+          <img src="/assets/img/social media buttons/github/gh-mobile.png" alt="GitHub">
+        </a>
+        <a href="#atf">
+          <img src="/assets/img/social media buttons/mail/mail-mobile.png" alt="Mail mobile">
+        </a>
+        <a href="#atf">
+          <img src="/assets/img/social media buttons/linkedin/li-mobile.png" alt="Linkedin mobile">
+        </a>
+      </div>     
+
+      <div class="legal-notice-mobile">
+        <a href="#contact">Legal notice</a>
+        <p>© Felix Oppermann 2025</p>
+      </div>
+
     </div>
   </footer>
 </section>

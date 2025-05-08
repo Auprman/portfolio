@@ -1,4 +1,5 @@
 import { HostListener, Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 
 
@@ -29,12 +30,15 @@ export class GlobalService {
   constructor() {     
   }
 
+  private mobileSubject = new BehaviorSubject<boolean>(window.innerWidth < 1024);
+  
+  isMobile$ = this.mobileSubject.asObservable();
+
   language:string = 'en';
   isTransitioning = false;
   activeProject: string = 'Join';
-  hamActive:boolean = false;
-  
-
+  hamActive:boolean = false;  
+  isMobile:boolean = false;
 
 
   
@@ -56,6 +60,12 @@ get activeProjectData(): Project | undefined {
     return this.activeProject === current;
   } 
 
+
+  onResize() {
+    const isNowMobile = window.innerWidth < 1024;
+    this.isMobile = isNowMobile;
+    this.mobileSubject.next(isNowMobile);
+  }
   
 
   projects:Project[] = [{
