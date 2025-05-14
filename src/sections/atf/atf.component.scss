@@ -28,7 +28,8 @@ h2{
     max-width: 100%;
     height: auto;
     width: auto;
-    object-fit: cover; 
+    z-index: 2;
+    transition: all 0.4s ease;
   }
 
 .main-container-atf {
@@ -44,27 +45,53 @@ h2{
 }
 
 .left-section {
-    position: relative;
-    background-image: url('/assets/img/bg-img/bg-default.png'); 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+  width: 40vw;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('/assets/img/bg-img/bg-default.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    display: flex;
-    height: 70vh;
-    width: 40vw;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: background-image 0.3s ease-in-out;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
 
-    &:hover {
-      background-image: url('/assets/img/bg-img/bg-hover.png'); 
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url('/assets/img/bg-img/bg-hover.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
 
-    > * {
-      position: relative;
-      z-index: 2;
-    }
+  &:hover::before {
+    opacity: 0;
+  }
+
+  &.hide-bg-img::before,
+  &.hide-bg-img::after {
+    opacity: 0;
+  }
 }
 
 
@@ -166,18 +193,17 @@ h2{
 }
 
 .ham-active {  
-  top: 0;
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
-  border: 1px solid rebeccapurple;
+  width: 90vw;
+  height: 48vh;
+  max-width: 500px;
 }
 
 .hide {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    background-image: none;
   }
 
 .hide-bg-img{
@@ -198,7 +224,6 @@ h2{
     height: auto !important;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
   
     .nav-bar-mobile {
       display: flex;
@@ -210,7 +235,7 @@ h2{
     .links-navbar {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center;      
   
       a {
         font-size: 20px;
@@ -287,7 +312,6 @@ h2{
     }
 }
     
-
 @media (max-width: 652px) {
     h2{
         font-size: 24px;

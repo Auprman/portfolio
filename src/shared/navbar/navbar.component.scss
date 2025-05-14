@@ -55,7 +55,13 @@ $lightBlue : #89BCD9;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
+.fade-out {
+      opacity: 0;
+    } 
 
 .language{
   display: flex;

@@ -37,10 +37,13 @@ ngOnDestroy() {
   activeLinkLanguage: string = 'en';
 
   setActive(linkName: string) {
-    this.activeLink = linkName;    
+    this.activeLink = linkName; 
+    console.log('activeLink', this.activeLink);
+       
   }
 
   setActiveLanguage(linkName: string){
+    this.global.switchLanguageAnimation(linkName);
     this.activeLinkLanguage = linkName;
     this.global.language = linkName;
   }

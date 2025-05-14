@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { GlobalService } from '../../global.service';
 import { Subscription } from 'rxjs';
+import { ScrollFadeDirective } from '../../shared/scroll-fade.directive';
 
 interface Description{
   descriptionEn: string,
@@ -8,7 +9,7 @@ interface Description{
 }
 @Component({
   selector: 'app-why-me',
-  imports: [],
+  imports: [ScrollFadeDirective],
   templateUrl: './why-me.component.html',
   styleUrl: './why-me.component.scss'
 })

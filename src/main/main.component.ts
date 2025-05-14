@@ -13,14 +13,24 @@ import { BurgermenuComponent } from "../shared/burgermenu/burgermenu.component";
 import { GlobalService } from '../global.service';
 import { ScrollFadeDirective } from '../shared/scroll-fade.directive';
 
-
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet,RouterModule, ReactiveFormsModule,],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: 'app-main',
+  imports: [
+    AtfComponent, 
+    NavbarComponent, 
+    WhyMeComponent, 
+    RouterModule, 
+    SkillsComponent, 
+    ProjectsComponent, 
+    ContactComponent, 
+    ReferencesComponent, 
+    ReactiveFormsModule, 
+    FooterComponent, 
+    BurgermenuComponent,],
+  templateUrl: './main.component.html',
+  styleUrl: './main.component.scss'
 })
-export class AppComponent {
+export class MainComponent {
   title = 'portfolio';  
   constructor(private global: GlobalService) {
     this.global.onResize(); 
@@ -30,7 +40,5 @@ export class AppComponent {
   onResize(event: Event) {
     this.global.onResize();
   }
-
+  
 }
-
-

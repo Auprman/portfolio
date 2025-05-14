@@ -1,12 +1,27 @@
-<section> 
-    <h1>My Projects</h1> 
-  
-    <div class="project-main-card">
+<section [class.fade-out]="global.isTransitioningLanguage"> 
+    @if (global.language === 'en') { 
+      <h1>My Projects</h1> 
+    } 
+    @else { <h1>Meine Projekte</h1>
+    }
+    <div appScrollFade class="project-main-card">
       <nav>
-        <button [class.active]="global.activeProject === 'Join'" (click)="global.setActiveProject('Join')" class="button">1. Join</button>
-        <button [class.active]="global.activeProject === 'El Pollo Loco'" (click)="global.setActiveProject('El Pollo Loco')" class="button">2. El Pollo Loco</button>
-        <button [class.active]="global.activeProject === 'Pokedex'" (click)="global.setActiveProject('Pokedex')" class="button">3. Pokedex</button>
-        <button [class.active]="global.activeProject === 'Ongoing'" (click)="global.setActiveProject('Ongoing')" class="button">4. Ongoing Project</button>
+        <button [class.active]="global.activeProject === 'Join'" 
+        (click)="global.setActiveProject('Join');" 
+        class="button">@if(global.isMobile){@if (global.language === 'en') {1. Project} @else {1. Projekt}}@else{2. {{global.projects[0].projectname}}}</button>
+
+        <button [class.active]="global.activeProject === 'El Pollo Loco'" 
+        (click)="global.setActiveProject('El Pollo Loco')" 
+        class="button">@if(global.isMobile){@if (global.language === 'en') {2. Project} @else {2. Projekt}}@else{2. {{global.projects[1].projectname}}}</button>
+
+        <button [class.active]="global.activeProject === 'Pokedex'" 
+        (click)="global.setActiveProject('Pokedex')" 
+        class="button">@if(global.isMobile){@if (global.language === 'en') {3. Project} @else {3. Projekt}}@else{2. {{global.projects[2].projectname}}}</button>
+
+        <button [class.active]="global.activeProject === 'Ongoing'" 
+        (click)="global.setActiveProject('Ongoing')" 
+        class="button">@if(global.isMobile){@if (global.language === 'en') {4. Project} @else {4. Projekt}}@else{2. {{global.projects[3].projectname}}}</button>
+
       </nav>
   
       <div class="content-wrapper" 
@@ -45,7 +60,7 @@
                 <p>@if(global.language === 'en'){{{global.activeProjectData?.experienceEn}}}@else{{{global.activeProjectData?.experienceDe}}}</p>
               </div>
               
-              <div class="task">
+              <div [class.hidden]="global.activeProject === 'Ongoing'" class="task">
                 <div class="task-header">
                   <div class="bullet-point">
                     <img src="/assets/img/bg-img/project-bullet-point.svg" alt="bullet point">
@@ -67,7 +82,7 @@
               </div>              
             </div>
             <div class="technologie-mobil">              
-                <h1>{{global.activeProjectData?.projectname}}</h1>
+                <h2>{{global.activeProjectData?.projectname}}</h2>
               <div class="tool"> 
                 <p>@if(global.language === 'en'){Technologies: }@else{Technologien: } 
                     @for (spelledOutTech of global.activeProjectData?.technologiesSpelledOut; track $index) {
@@ -80,29 +95,28 @@
                 <span>@if(global.language === 'en'){{{global.activeProjectData?.durationEn}}}@else{{{global.activeProjectData?.durationDe}}}</span></p>             
           </div>
             <div class="project-image" (mouseenter)="hover = true" (mouseleave)="hover = false">
-              <img
-                class="static-img"
-                [class.hidden]="hover"
-                [src]="global.activeProjectData?.imgScreenshot"
-                alt="Project Screenshot"
-              />
-              <img
-                class="gif-img"
-                [class.hidden]="!hover"
-                [src]="global.activeProjectData?.gifProject"
-                alt="Project GIF"
-              />
+              <img class="static-img" [class.hidden]="hover" [src]="global.activeProjectData?.imgScreenshot" alt="Project Screenshot" />
+
+              @if(global.activeProjectData?.projectname !== 'Ongoing'){
+                <img class="gif-img" [class.hidden]="!hover" [src]="global.activeProjectData?.gifProject" alt="Project GIF" />
+              } @else {
+                @if (hover) {
+                 <div *ngIf="hover" class="typing-container">
+                  <span class="typing-text">In Progress ...</span>
+                </div>
+                }
+              }
             </div>
             <div [class.hidden]="global.activeProject === 'Ongoing'" class="links">
-              <a href="link-zur-live-seite" target="_blank">Live Test</a>
-              <a href="link-zu-github" target="_blank">GitHub</a>
+              <a href="{{global.activeProjectData?.linkLive}}" target="_blank " rel="noopener">Live Test</a>
+              <a href="{{global.activeProjectData?.linkGithub}}" target="_blank " rel="noopener">GitHub</a>
             </div>
           </div> 
     
         </div>
         <div [class.hidden]="global.activeProject === 'Ongoing'" class="links-mobile">
-          <a href="link-zur-live-seite" target="_blank">Live Test</a>
-          <a href="link-zu-github" target="_blank">GitHub</a>
+          <a href="{{global.activeProjectData?.linkLive}}" target="_blank " rel="noopener">Live Test</a>
+          <a href="{{global.activeProjectData?.linkGithub}}" target="_blank " rel="noopener">GitHub</a>
         </div>
       </div> 
   

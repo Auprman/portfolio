@@ -1,0 +1,186 @@
+$mainBgColor: #262E34;
+$fontLightPurple : #F8F5EC;
+$lightBlue : #89BCD9;
+$BtnHoverBg  : #F8F5EC1F;
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+.privacy-wrapper {
+  padding: 32px 16px;
+  background-color: $mainBgColor;
+  color: $fontLightPurple;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.privacy-content {
+  max-width: 960px;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+a{
+    color: $lightBlue;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    &:hover{
+        color: $fontLightPurple;
+    }
+}
+
+h1 {
+  font-family: 'Anta';
+  font-size: 60px;
+  color: $lightBlue;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Josefin Sans';
+  font-size: 40px;
+  color: $fontLightPurple;
+  margin-top: 32px;
+  text-decoration: underline;
+}
+
+p, li {
+  font-family: 'Josefin Sans';
+  font-size: 18px;
+  line-height: 1.6;
+  color: $fontLightPurple;
+}
+
+ul.index {
+  padding-left: 16px;
+  margin-bottom: 24px;
+  word-break: break-word;
+}
+
+ul.index li {
+  margin-bottom: 8px;
+}
+
+ul.index a {
+  color: $lightBlue;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.back-button-container {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.back-button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid $lightBlue;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-family: 'Josefin Sans';
+  font-size: 16px;
+  color: #89BCD9;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background-color: $mainBgColor;
+}
+
+.arrow-up{
+    position: absolute;
+    transition: 0.2s all ease-in-out;
+    right: 0;
+    top: 16px;
+    &:hover{
+        opacity: 1;       
+    }    
+}
+
+
+.arrow-up-mobile {
+      position: relative;
+      display: inline-block;
+
+      .icon {
+        position: absolute;
+        top: -16px;
+        left: 30vw;
+        transition: opacity 0.125s ease;
+        width: 30px;
+        height: 60px;
+      }
+
+      .hover {
+        opacity: 0;
+      }
+
+      &:hover .hover {
+        opacity: 1;
+      }
+
+      &:hover .default {
+        opacity: 0;
+      }
+    }
+    .arrow-down{
+        img{
+            width: 39px;
+            height: 89px;
+        }
+    }
+
+.link-back{
+  font-family: 'Josefin Sans';
+  font-size: 24px;
+  color: $lightBlue;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 42px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  p, li {
+    font-size: 16px;
+  }
+  .back-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-wrapper {
+    padding: 24px 12px;
+  }
+  .privacy-content {
+    padding: 0 8px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p, li {
+    font-size: 14px;
+  }
+  ul.index {
+    padding-left: 8px;
+  }
+  ul.index a {
+    word-break: break-word;
+  }
+}

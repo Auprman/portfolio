@@ -11,6 +11,12 @@ section {
   justify-content: center;  
   align-items: center;
   flex-direction: column;
+  opacity: 1;
+  transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
+}
+
+.fade-out {
+  opacity: 0;
 }
 
 h1 {
@@ -19,6 +25,14 @@ h1 {
   color: $lightBlue;
   margin-bottom: 40px;
   text-align: center;
+}
+
+h2{
+  font-size: 40px;
+  font-family: 'josefin sans', sans-serif;
+  font-weight: 400;
+  color: $lightBlue;
+  margin-bottom: 20px;
 }
 
 .project-main-card {
@@ -43,7 +57,7 @@ nav {
     border-radius: 30px 30px 0 0;
     padding:32px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 
     &:hover {
       color: $fontLightPurple;
@@ -172,9 +186,13 @@ nav {
 .project-image {
   position: relative;
   width: 100%;
-  height: 350px; 
+  height: 350px;
   overflow: hidden;
   border-radius: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   img {
     position: absolute;
@@ -236,6 +254,42 @@ nav {
 .hidden{
   visibility: hidden;
 }
+
+.typing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  width: 100%;
+
+  span{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    color: $lightBlue;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+
+  .typing-text {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 2px solid $lightBlue;
+    animation: typing 2s steps(15, end) forwards;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9.5ch; 
+  }
+}
+
 /* ------------------------
 Responsive Design
 -------------------------*/
@@ -325,6 +379,9 @@ Responsive Design
 
   nav{    
     flex-wrap: nowrap;
+    .button{
+      padding: 24px;
+    }
   }
 
   .tools{
@@ -336,7 +393,7 @@ Responsive Design
   }
 
   .links-mobile{
-    display: flex;
+    display: flex;    
   }
 }
 
@@ -345,9 +402,22 @@ Responsive Design
     font-size: 36px;
   }
 
+  h2{
+    font-size: 24px;
+  }
+
   nav .button {
     font-size: 18px;
-    padding: 12px 8px;
+    padding: 16px 8px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .right-section{
+    gap: 0px !important;
+  }
+
+  .content-inner{
+    gap: 0px !important;
   }
 
   .task {

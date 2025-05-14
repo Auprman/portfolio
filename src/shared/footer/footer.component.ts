@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
 import { CommonModule } from '@angular/common';
+import { GlobalService } from '../../global.service';
+
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+
+  global = inject(GlobalService);
 
   githubHovered:boolean = false;
   mailHovered:boolean = false;

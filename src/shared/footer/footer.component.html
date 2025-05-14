@@ -2,7 +2,7 @@
   <footer>
     <div class="footer-content">
       <div class="left-section-wrapper">
-        <a href="#contact">Legal notice</a>
+        <a href="legal-notice">@if (global.language === 'en') {Legal notice} @else {Impressum}</a>
         <p>© Felix Oppermann 2025</p>
       </div>
 
@@ -15,31 +15,34 @@
       </a>      
 
       <div class="link-wrapper">
-        <a href="#atf" (mouseenter)="githubHovered = true" (mouseleave)="githubHovered = false">
+        <a href="https://github.com/Auprman" target="_blank " rel="noopener"
+          (mouseenter)="githubHovered = true" (mouseleave)="githubHovered = false">
           <img [src]="githubHovered ? '/assets/img/social media buttons/github/gh-white.png' : '/assets/img/social media buttons/github/gh-dark.png'" alt="GitHub">
         </a>
-        <a href="#atf" (mouseenter)="mailHovered = true" (mouseleave)="mailHovered = false">
+        <a href="mailto: mail@felix-oppermann.com" target="_blank " rel="noopener"
+          (mouseenter)="mailHovered = true" (mouseleave)="mailHovered = false">
           <img [src]="mailHovered ? '/assets/img/social media buttons/mail/mail-white.png' : '/assets/img/social media buttons/mail/mail-dark.png'" alt="Mail">
         </a>
-        <a href="#atf" (mouseenter)="linkedinHovered = true" (mouseleave)="linkedinHovered = false">
+        <a href="https://www.linkedin.com/in/felix-oppermann-54bab31a6/" target="_blank " rel="noopener"
+          (mouseenter)="linkedinHovered = true" (mouseleave)="linkedinHovered = false">
           <img [src]="linkedinHovered ? '/assets/img/social media buttons/linkedin/li-white.png' : '/assets/img/social media buttons/linkedin/li-dark.png'" alt="LinkedIn">
         </a>
       </div>
 
       <div class="link-wrapper-mobile">
-        <a href="#atf">
+        <a href="https://github.com/Auprman" target="_blank " rel="noopener">
           <img src="/assets/img/social media buttons/github/gh-mobile.png" alt="GitHub">
         </a>
-        <a href="#atf">
+        <a href="mailto: mail@felix-oppermann.com" target="_blank " rel="noopener">
           <img src="/assets/img/social media buttons/mail/mail-mobile.png" alt="Mail mobile">
         </a>
-        <a href="#atf">
+        <a href="https://www.linkedin.com/in/felix-oppermann-54bab31a6/" target="_blank " rel="noopener">
           <img src="/assets/img/social media buttons/linkedin/li-mobile.png" alt="Linkedin mobile">
         </a>
       </div>     
 
       <div class="legal-notice-mobile">
-        <a href="#contact">Legal notice</a>
+        <a href="legal-notice">@if (global.language === 'en') {Legal notice} @else {Impressum}</a>
         <p>© Felix Oppermann 2025</p>
       </div>
 

@@ -2,12 +2,14 @@ import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { GlobalService } from '../../global.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { ScrollFadeDirective } from '../../shared/scroll-fade.directive';
+
 
 
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollFadeDirective],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })

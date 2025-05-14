@@ -10,6 +10,12 @@ section{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
+}
+
+.fade-out{
+    opacity: 0;
 }
 
 
@@ -113,6 +119,7 @@ display: none;
         width: 32px;        
     }
 }
+
 .headline-mobil{
     display: none;
 }
@@ -138,6 +145,11 @@ display: none;
                 background-color: $lightBlue;
             }
         }        
+    }
+    .right-section-current{
+        p{
+            text-align: left;
+        }
     }
 }
 
@@ -179,8 +191,12 @@ display: none;
         font-family: $fJs;
         p{
             padding-top: 40px;
+            font-size: 16px;
         }
     }  
+    p{
+        padding: 0 8px;
+    }
 
 }
 

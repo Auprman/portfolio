@@ -1,6 +1,6 @@
-<section> 
-    <h1>My Skills</h1> 
-    <div class="skills">          
+<section [class.fade-out]="global.isTransitioningLanguage"> 
+   @if (global.language === 'en') { <h1>My Skills</h1> } @else { <h1>Meine Fähigkeiten</h1> } 
+    <div appScrollFade class="skills">          
         <div class="left-section-skills">
             @for (skill of skills; track $index) {
                     <div class="symbol">

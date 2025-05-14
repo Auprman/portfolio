@@ -3,30 +3,46 @@
 [ngClass]="{ 'show-menu': isMobile && this.global.hamActive}"
 
 >
-    <div class="links-navbar">
+    <div class="links-navbar" [class.fade-out]="global.isTransitioningLanguage">
       <a 
       href="#why-me" 
-      [class.active]="activeLink === 'why-me'" 
-      (click)="setActive('why-me')">
-      Why me
+      [class.active]="activeLink === 'why-me-mobile'" 
+      (click)="setActive('why-me-mobile')">
+       @if (global.language === 'en') { 
+      Why me 
+    } @else { 
+      Warum ich 
+    }
     </a>
     <a  
       href="#skills" 
-      [class.active]="activeLink === 'skills'" 
-      (click)="setActive('skills')">
+      [class.active]="activeLink === 'skills-mobile'" 
+      (click)="setActive('skills-mobile')">
+      @if (global.language === 'en') { 
       Skills
+    } @else { 
+      Fähigkeiten
+    }
     </a>
     <a 
       href="#projects" 
-      [class.active]="activeLink === 'projects'" 
-      (click)="setActive('projects')">
+      [class.active]="activeLink === 'projects-mobile'" 
+      (click)="setActive('projects-mobile')">
+      @if (global.language === 'en') { 
       Projects
+    } @else { 
+      Projekte
+    }
     </a>
     <a 
       href="#contact" 
-      [class.active]="activeLink === 'contact'" 
-      (click)="setActive('contact')">
-      Contact
+      [class.active]="activeLink === 'contact-mobile'" 
+      (click)="setActive('contact-mobile')">
+      @if (global.language === 'en') { 
+      Contact me
+    } @else { 
+      Kontakt
+    }
     </a>
     </div>
   

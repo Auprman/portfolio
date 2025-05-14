@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
   }
 
   setActiveLanguage(linkName: string){
+    this.global.switchLanguageAnimation(linkName);
     this.activeLinkLanguage = linkName;
     this.global.language = linkName;
   }

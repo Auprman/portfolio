@@ -3,10 +3,12 @@ import { Component, inject } from '@angular/core';
 import { GlobalService } from '../../global.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ScrollFadeDirective } from '../../shared/scroll-fade.directive';
+
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, ReactiveFormsModule, NgStyle],
+  imports: [CommonModule, ReactiveFormsModule, NgStyle, ScrollFadeDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

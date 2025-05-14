@@ -1,20 +1,41 @@
-<section class="why-me">
-    <h1>Why me</h1>
-    <div class="text-area">
+<section  class="why-me" [class.fade-out]="global.isTransitioningLanguage">
+   @if (global.language === 'en') {
+        <h1 >Why me?</h1>
+    } @else {
+        <h1 >Warum ich?</h1>
+    }
+    <div  appScrollFade class="text-area">
         <div class="location">
             <img [src]="isMobile ? '/assets/img/location/location-mobil.svg' : '/assets/img/location/location.svg'" alt="Location image">
             <p>
-                <span class="fs30-lb">I am &nbsp;</span>
-                <span>located in Braunschweig..|</span>
+                @if (global.language === 'en') {
+                    <span class="fs30-lb">I am &nbsp;</span>
+                    <span>located in Braunschweig</span>
+                } @else {
+                    <span class="fs30-lb">Ich &nbsp;</span>
+                    <span>lebe in Braunschweig</span> 
+                }               
             </p>
         </div>
         <div class="text-about-me">            
             <p>@if (global.language === 'en'){{{des.descriptionEn}}}@else {{{des.descriptionDe}}}</p>
             <div class="button">
-                <a href="#contact">
+                @if (global.language === 'en') {
+                    <a href="#contact">
                     Let´s talk 
                 </a>
+                } @else {
+                    <a href="#contact">
+                    Schreib mir 
+                </a>}
             </div>
         </div>
     </div>
 </section>
+
+
+@if (global.language === 'en') {
+                 
+    } @else { 
+                }               
+           

@@ -4,30 +4,46 @@
     textColor="dark">
   </app-logo>
 
-  <div class="links-navbar">
+  <div class="links-navbar" [class.fade-out]="global.isTransitioningLanguage">
     <a 
     href="#why-me" 
-    [class.active]="activeLink === 'why-me'" 
+    [class.active]="activeLink === 'why-me'"    
     (click)="setActive('why-me')">
-    Why me
+    @if (global.language === 'en') { 
+      Why me 
+    } @else { 
+      Warum ich 
+    }
   </a>
   <a  
     href="#skills" 
     [class.active]="activeLink === 'skills'" 
     (click)="setActive('skills')">
-    Skills
+    @if (global.language === 'en') { 
+      Skills
+    } @else { 
+      Fähigkeiten
+    }
   </a>
   <a 
     href="#projects" 
     [class.active]="activeLink === 'projects'" 
     (click)="setActive('projects')">
-    Projects
+    @if (global.language === 'en') { 
+      Projects
+    } @else { 
+      Projekte
+    }
   </a>
   <a 
     href="#contact" 
     [class.active]="activeLink === 'contact'" 
     (click)="setActive('contact')">
-    Contact
+    @if (global.language === 'en') { 
+      Contact me
+    } @else { 
+      Kontakt
+    }
   </a>
   </div>
 

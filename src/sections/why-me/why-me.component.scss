@@ -38,6 +38,12 @@ h1{
     width: 100%;
     height: 60vh;
     max-width: clamp(320px, 90%, 1440px);
+    opacity: 1;
+    transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
+}
+
+.fade-out{
+    opacity: 0;
 }
 
 .text-area{
@@ -78,32 +84,34 @@ h1{
     justify-content: flex-end;
 }
 
+
 @media (max-width: 1024px) {
     .text-area{
         flex-direction: column;
     }
+
     .button{
+      
         display: none;
     }
     .text-about-me{
         width: 80%;
-        p{
-            text-align: center;
-        }
-    }
+    }    
+
     .why-me{
         height: auto;
     }
 
+
+
     h1{
         padding-top: 220px;
     }
+
+
+
     .location{
         font-size: 18px;
-        p{
-            text-align: center;
-        }
-        
         >img{
             margin-right: 24px;
         }

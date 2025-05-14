@@ -1,7 +1,7 @@
 <section>
-    <div class="contact-main">
+    <div  class="contact-main">
         <div class="headline">
-            <h2>Contact me</h2>  
+            @if (global.language === 'en') { <h2>Contact me</h2>  } @else { <h2>Kontakt</h2> }
             <a class="arrow-up"(mouseover)="arrowIsHovered = true" (mouseout)="arrowIsHovered = false" href="#atf">
                 <img 
                 [src]="arrowIsHovered ? '/assets/img/arrows/arrow-up-hover.png' : '/assets/img/arrows/arrow-up-default.png'" 
@@ -9,7 +9,7 @@
                 </a>
             </div>
 
-            <div class="description">
+            <div appScrollFade class="description">
                 <div class="contact-me-text">
                     <p>@if(global.language === 'en'){{{contacMeTextEn}}}@else{{{contacMeTextDe}}}</p>
                 </div>
@@ -28,16 +28,16 @@
             </div>
 
 
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <form appScrollFade [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 
                <div class="input-data">
                     <div class="form-field">
                         <label for="email">
                         <ng-container class="input-error" *ngIf="(contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
-                          <div class="input-error">Email is required.</div>
+                          <div class="input-error">@if(global.language === 'en') { Email is required.} @else {Bitte E-Mail-Adresse angeben.}</div>
                         </ng-container>
                         <ng-container class="input-error" *ngIf="(contactForm.get('email')?.errors?.['email'] && !contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
-                            <div class="input-error">Invalid email format.</div>
+                            <div class="input-error">@if(global.language === 'en') {Invalid email format.} @else {Falsches E-Mail-Format.}</div>
                         </ng-container>
                         <ng-container *ngIf="!contactForm.get('email')?.errors || (!contactForm.get('email')?.touched && !submitted)">
                             Email
@@ -50,10 +50,10 @@
                     <div class="form-field">
                         <label for="name">
                             <ng-container  *ngIf="(contactForm.get('name')?.errors?.['required'] && (contactForm.get('name')?.touched || submitted))">
-                           <div class="input-error"> Your Name is required.</div>
+                           <div class="input-error"> @if(global.language === 'en') {Your Name is required.} @else {Bitte Namen eingeben.}</div>
                             </ng-container>
                             <ng-container *ngIf="!contactForm.get('name')?.errors || (!contactForm.get('name')?.touched && !submitted)">
-                            Your name
+                            @if(global.language === 'en') {Your name} @else {Name}
                             </ng-container>
                         </label>
                         <input [ngStyle]="contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || submitted) ? { 'border': '1px solid #E44C36' } : null"
@@ -64,10 +64,11 @@
                 <div class="form-field">
                   <label for="message">
                     <ng-container  *ngIf="(contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted))">
-                      <div class="input-error">Message is required.</div>
+                      <div class="input-error">@if(global.language === 'en') { Message is required.} @else {Bitte Nachricht eingeben.}</div>
                        </ng-container>
                        <ng-container *ngIf="!contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted)">
-                        Message
+                        @if(global.language === 'en') {Message} 
+                        @else {Nachricht}
                        </ng-container>
                   </label>
                   <textarea [ngStyle]="contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted) ? { 'border': '1px solid #E44C36' } : null" id="message" formControlName="message" rows="6"></textarea>
@@ -90,7 +91,8 @@
                     (mouseleave)="isCheckboxHovered = false"
                     [src]="getCheckboxImage()" alt="Checkbox state" 
                     />                
-                    <p>I've read the <a href="#atf"> privacy policy </a> and agree to the processing of my data as outlined.</p>
+                    @if (global.language === 'en') {<p>I've read the <a href="privacy"> privacy policy </a> and agree to the processing of my data as outlined.</p>} 
+                    @else {<p>Ich habe die <a href="privacy">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</p>}
                   </label>
                 
                   <div class="error" *ngIf="hasPrivacyError()">
@@ -99,7 +101,8 @@
                 </div>
                   
                 <div class="button-wrapper">
-                  <button [ngClass]="{ 'disabled': contactForm.invalid }" type="submit">Send</button>
+                  <button [ngClass]="{ 'disabled': contactForm.invalid }" type="submit">
+                    @if (global.language === 'en') {Send} @else {Absenden}</button>
                 </div>
               </form>  
 

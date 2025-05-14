@@ -9,16 +9,19 @@ interface Project {
   aboutDe: string,
   durationEn: string,
   durationDe: string,  
-  organizationEn: string,
-  organizationDe: string,
-  experienceEn: string,
-  experienceDe: string,
+  organizationEn?: string,
+  organizationDe?: string,
+  experienceEn?: string,
+  experienceDe?: string,
   imgScreenshot: string,
   gifProject: string,
   usedTechnologies: string[],
   technologiesSpelledOut: string[],
   headlinesEn: string[],
   headlinesDe: string[],
+  linkLive: string,
+  linkGithub: string,
+  isSingleProject: boolean
 }
 @Injectable({
   providedIn: 'root'
@@ -39,6 +42,8 @@ export class GlobalService {
   activeProject: string = 'Join';
   hamActive:boolean = false;  
   isMobile:boolean = false;
+  defaultLanguage:string = 'en';
+  isTransitioningLanguage = false;
 
 
   
@@ -56,6 +61,7 @@ get activeProjectData(): Project | undefined {
     }, 200); 
   }
 
+
   projectIsActive(current:string){
     return this.activeProject === current;
   } 
@@ -65,6 +71,15 @@ get activeProjectData(): Project | undefined {
     const isNowMobile = window.innerWidth < 1024;
     this.isMobile = isNowMobile;
     this.mobileSubject.next(isNowMobile);
+  }
+
+
+  switchLanguageAnimation(clickedLanguage?: string) {
+    if (this.language === clickedLanguage) return;
+    this.isTransitioningLanguage = true;
+    setTimeout(() => {
+      this.isTransitioningLanguage = false;           
+    }, 200); 
   }
   
 
@@ -82,8 +97,11 @@ get activeProjectData(): Project | undefined {
     gifProject: '/assets/img/bg-img/join.webp',
     usedTechnologies: ['js', 'css', 'html', 'firebase'],
     technologiesSpelledOut: ['Javascript','CSS','HTML','Firebase'],
-    headlinesEn:['About the project','How I have organised my work process','My group work experience'],
-    headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Meine Erfahrung in der Teamarbeit'],  
+    headlinesEn:['About the project','How I have organized my work process','My group work experience'],
+    headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Meine Erfahrung in der Teamarbeit'],
+    linkLive: './join/html/login.html',
+    linkGithub: 'https://github.com/Auprman/da-join',
+    isSingleProject: false  
   },
   {
     projectname: 'El Pollo Loco',
@@ -99,8 +117,11 @@ get activeProjectData(): Project | undefined {
     gifProject: '/assets/img/bg-img/el-pollo-loco.webp',
     usedTechnologies: ['js', 'css', 'html'],
     technologiesSpelledOut: ['Javascript','CSS','HTML'],
-    headlinesEn:['About the project','How I have organised my work process','Workflow & Organization'],
-    headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Arbeitsweise & Organisation'],
+    headlinesEn:['About the project','How I have organized my work process','What i have learned'],
+    headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Was ich gelernt habe'],
+    linkLive: './el-pollo-loco/',
+    linkGithub: 'https://github.com/Auprman/El-pollo-loco',
+    isSingleProject: true
   },
   {
     projectname: 'Pokedex',
@@ -116,25 +137,29 @@ get activeProjectData(): Project | undefined {
     gifProject: '/assets/img/bg-img/pokedex.webp',
     usedTechnologies: ['js', 'css', 'html','rest'],
     technologiesSpelledOut: ['Javascript','CSS', 'HTML', 'REST API'],
-    headlinesEn:['About the project','How I have organised my work process','Workflow & Organization'],
-    headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Arbeitsweise & Organisation'],
+    headlinesEn:['About the project','How I have organized my work process','What i have learned'],
+    headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Was ich gelernt habe'],
+    linkLive: './pokedex/',
+    linkGithub: 'https://github.com/Auprman/pokeindex',
+    isSingleProject: true
   },
   {
     projectname: 'Ongoing',
-    aboutEn: 'A task manager inspired by the Kanban method. Easily create, organize, and move tasks with drag and drop, and assign users and categories seamlessly.',
-    aboutDe: 'Ein Taskmanager zur effizienten Organisation von Aufgaben auf Basis des Kanban-Systems – mit der Möglichkeit, Aufgaben per Drag & Drop flexibel Nutzern und Kategorien zuzuweisen.',
-    durationEn: 'In progress',
-    durationDe: 'In Bearbeitung',
-    organizationEn: 'We kept our project organized with a Trello Kanban board, splitting tasks and tracking To-Dos as a team. To keep the code clean and maintainable, we built reusable components, used clear naming everywhere, and made sure everything was well-documented.',
-    organizationDe: 'Wir haben unser Projekt mit einem Trello-Kanban-Board organisiert, Aufgaben aufgeteilt und gemeinsam To-Dos abgearbeitet. Damit der Code sauber und wartbar bleibt, haben wir auf wiederverwendbare Komponenten, klare Namen und gute Dokumentation gesetzt.',
-    experienceEn: 'We were a team of three, and I focused on everything related to creating contacts and linking them to tasks. We supported each other throughout the project, which made working together a lot of fun. We built the app using JavaScript, HTML, CSS, and Google Firebase.',
-    experienceDe: 'Wir waren ein Team von drei Leuten, und ich habe mich um alles rund um die Erstellung von Kontakten und deren Verknüpfung mit Aufgaben gekümmert. Durch die enge Zusammenarbeit haben wir uns immer gegenseitig unterstützt – das hat das Projekt besonders spannend und spaßig gemacht. Umgesetzt haben wir das Ganze mit JavaScript, HTML, CSS und Google Firebase.',
+    aboutEn: 'In my upcoming project, I plan to develop a booking system for a psychological practice. Visitors will be able to choose from available time slots and book an appointment directly through the website. The goal is to make the process as simple and user-friendly as possible – for both the clients and the practice team, with particular attention to data privacy requirements.',
+    aboutDe: 'In meinem nächsten Projekt möchte ich eine Terminbuchungslogik für eine psychotherapeutische Praxis umsetzen. Nutzerinnen sollen auf der Website aus verfügbaren Zeitfenstern einen passenden Termin auswählen und direkt buchen können. Ziel ist es, den Buchungsprozess so einfach und benutzerfreundlich wie möglich zu gestalten – für die Klientinnen ebenso wie für die Praxis, und das unter besonderer Berücksichtigung datenschutzrechtlicher Bedingungen.',
+    durationEn: 'Future project',
+    durationDe: 'Zukünftiges Projekt',
+    experienceEn: 'I’ll organize the project in clear steps: First, I define the requirements, then I build the responsive frontend using Angular, TypeScript, and CSS. The appointment logic is handled via Firebase. With Git versioning, regular testing, and an iterative approach, I ensure a clean and secure implementation.',
+    experienceDe: 'Das Projekt strukturiere ich in klare Schritte: Zuerst definiere ich die Anforderungen, danach entwickle ich das responsive Frontend mit Angular, TypeScript und CSS. Die Terminlogik setze ich mit Firebase um. Durch Git-Versionierung, regelmäßige Tests und Iterationen stelle ich eine saubere und sichere Umsetzung sicher.',
     imgScreenshot: '/assets/img/bg-img/screenshot-coming-soon.png',
     gifProject: '/assets/img/bg-img/join.webp',
     usedTechnologies: ['angular', 'html','css','firebase'],
     technologiesSpelledOut: ['Angular','HTML','CSS','Firebase'],
-    headlinesEn:['About the project','How I have organised my work process','My group work experience'],
+    headlinesEn:['About the project','How I want to organize my work process','Workflow & Organization'],
     headlinesDe:['Über das Projekt','Meine Organisation des Arbeitsprozesses','Arbeitsweise & Organisation'],
+    linkLive: '',
+    linkGithub: '',
+    isSingleProject: true
   },]
 
 

@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { GlobalService } from '../../global.service';
+import { ScrollFadeDirective } from '../../shared/scroll-fade.directive';
+
 
 interface Skill {
   name: string;
@@ -7,7 +9,7 @@ interface Skill {
 } 
 @Component({
   selector: 'app-skills',
-  imports: [],
+  imports: [ScrollFadeDirective],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })

@@ -1,7 +1,13 @@
 <section>
-    <h2>Need a teamplayer? @if(!isMobile){Here what my colleagues said about me}</h2>
-    @if (isMobile) {<h3>Here what my colleagues said about me</h3>}
-    <div class="ref-main">        
+     <h2>   @if(!isMobile && global.language === 'en'){ Need a teamplayer? Here what my colleagues said about me} 
+            @else if (!isMobile && global.language === 'de') {Teamplayer gesucht? Das sagen meine Teamkollegen über mich}
+            @if(isMobile && global.language === 'en'){ Need a teamplayer? } 
+            @else if (isMobile && global.language === 'de') {Teamplayer gesucht? }
+     </h2> 
+
+            @if (isMobile && global.language === 'en') {<h3>Here what my colleagues said about me</h3>} 
+            @else if (isMobile && global.language === 'de') {<h3>Das sagen meine Teamkollegen über mich</h3>}
+    <div class="ref-main" appScrollFade>        
         @for (ref of refs; track $index) {
             <div class="single-ref">
             <h3>{{ref.name}}</h3>
@@ -9,6 +15,6 @@
             <p>@if (global.language === 'en') {{{ref.referenceEn}}}@else {{{ref.referenceDe}}} </p>
             <a href="{{ref.link}}">Linked in profil</a>
         </div>
-        }        
+    }      
     </div>
 </section>
