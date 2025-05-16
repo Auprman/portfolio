@@ -1,17 +1,7 @@
 import { Component, HostListener,NgModule } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { AtfComponent } from "../sections/atf/atf.component";
-import { NavbarComponent } from "../shared/navbar/navbar.component";
-import { WhyMeComponent } from "../sections/why-me/why-me.component";
-import { SkillsComponent } from "../sections/skills/skills.component";
-import { ProjectsComponent } from "../sections/projects/projects.component";
-import { ContactComponent } from "../sections/contact/contact.component";
-import { ReferencesComponent } from "../sections/references/references.component";
 import { ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from "../shared/footer/footer.component";
-import { BurgermenuComponent } from "../shared/burgermenu/burgermenu.component";
 import { GlobalService } from '../global.service';
-import { ScrollFadeDirective } from '../shared/scroll-fade.directive';
 
 
 @Component({
@@ -25,7 +15,12 @@ export class AppComponent {
   constructor(private global: GlobalService) {
     this.global.onResize(); 
   }
-
+  /**
+   * Listens to the window resize event and triggers the global resize handler.
+   * This is used to update the layout or styles based on the new window size.
+   * @param event The resize event from the window.
+   */
+  
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.global.onResize();

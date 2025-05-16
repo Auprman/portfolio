@@ -1,0 +1,187 @@
+$mainBgColor: #262E34;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+$error: #E44C36;
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  width: 100%;
+  background-color: $lightBlue;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+nav.fixed {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.ham-menu{
+    height: 30px;
+    width: 30px;
+    margin-right: 32px;
+    position: relative;
+    cursor: pointer;
+    span{
+        height: 2px;
+        width: 100%;
+        background-color: $fontLightPurple;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s ease;
+        &:nth-child(1){
+            top: 12.5%;
+        }
+        &:nth-child(2){
+            top: 87.5%;
+        }
+    }    
+}
+.ham-menu.active{
+    span:nth-child(1){
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    span:nth-child(2){
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    span:nth-child(3){
+        opacity: 0;
+    }
+}
+
+.logo{
+    margin: 0 32px;
+    height: 58px;
+    width: 72px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  a {
+    padding: 16px;
+    color: $mainBgColor;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &.active {
+      background-image: url('/assets/img/bg-button/bg-button.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      color: $fontLightPurple;
+      transform: scale(1.1);
+    }
+
+    &:hover {
+      background-color: $BtnHoverBg;
+    }
+  }
+}
+
+
+.dropdown-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 85px;
+  left: 0;
+  background-color: $lightBlue;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 999;
+  pointer-events: none; 
+  transform: translateY(-20px);
+  transition: 
+    transform 0.3s ease,
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+
+  &.visible {
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  &.visible.open {
+    max-height: 600px;
+    opacity: 1;
+  }
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px ;
+
+  a {
+    padding: 24px;
+    width: 100%;
+    text-align: center;
+    color: $mainBgColor;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &.active {
+      background-image: url('/assets/img/bg-button/bg-button.svg');
+      color: $fontLightPurple;
+      transform: scale(1.1);
+    }
+
+    &:hover {
+      background-color: $BtnHoverBg;
+    }
+  }
+}
+
+.language {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+
+  a {
+    padding: 8px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1024px) {
+    nav{
+        display: flex;
+    }
+    
+}
+
+@media (min-width: 1025px) {
+  nav {
+    display: none !important;    
+  }
+  .dropdown-wrapper {
+        opacity: 0 !important;
+    }
+}

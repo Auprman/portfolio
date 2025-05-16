@@ -9,6 +9,12 @@ section{
     display: flex;
     justify-content: center;
     line-height: 120%;
+    opacity: 1;
+    transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
+}
+
+.fade-out{
+    opacity: 0!important;
 }
 
 .arrow-up{
@@ -267,7 +273,7 @@ form{
 }
 
 .border-red{
-    border-color: $error;
+    border-color: $error !important
 }
 
  .arrow-up-mobile {
@@ -353,9 +359,13 @@ form{
            font-size: 16px;
            font-weight: 400; 
         }
-        
     }
+  
 
+  .input-error {
+    display: none;
+  }   
+  
     .button-wrapper{
        margin-top: 24px;
     }
@@ -367,6 +377,65 @@ form{
    form{
     padding: 0 22px;
    }
-
 }
+@media (max-width: 1023px) {
+  .responsive-placeholder::placeholder {
+    opacity: 1;
+    color: $lightBlue;
+    transition: color 0.3s ease;
+  }
+
+  .placeholder-error::placeholder {
+    color: $error;
+  }
+
+  @media (max-width: 1023px) {
+  .form-field:not(.checkbox) label,
+  .form-field:not(.checkbox) .input-error {
+    display: none !important;
+  }
+
   
+  .form-field.checkbox label,
+  .form-field.checkbox .error {
+    display: flex !important;
+    align-items: center;
+  }
+}
+
+
+  .border-error {
+    border: 1px solid $error !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-placeholder::placeholder {
+    opacity: 0 !important;
+  }
+
+  .form-field label,
+  .input-error {
+    display: block;
+  }
+
+  .border-error {
+    border: 1px solid $error !important;
+  }
+}
+
+@media (max-width: 600px) {
+    .form-field.checkbox{
+        .error{
+            bottom: -60px;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .form-field.checkbox{
+        .error{
+            bottom: -120px;
+        }
+    }
+}

@@ -1,9 +1,7 @@
-import { Component, ElementRef, HostListener, inject, OnInit } from '@angular/core';
-import { GlobalService } from '../../global.service';
+import { Component, ElementRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
-
-
+import { GlobalService } from '../../global.service';
 
 @Component({
   selector: 'app-navbar-mobile',
@@ -13,40 +11,72 @@ import { Subscription } from 'rxjs';
 })
 export class NavbarMobileComponent {
 
+  /** Whether the navbar should be fixed (unused in current logic) */
   isFixed = false;
-  global = inject(GlobalService)
 
-isMobile = false;
+  /** Global service for shared state like language and responsiveness */
+  global = inject(GlobalService);
 
-private subscription!: Subscription;
+  /** Indicates if the current screen is mobile-sized */
+  isMobile = false;
 
-ngOnInit() {
-  this.isMobile = this.global.isMobile;
-  this.subscription = this.global.isMobile$.subscribe(value => {
-    this.isMobile = value;
-  });
-}
-
-ngOnDestroy() {
-  this.subscription?.unsubscribe();
-}
-
-  constructor(private elRef: ElementRef) {}
-
+  /** Active link in the navigation */
   activeLink: string = '';
+
+  /** Active language link */
   activeLinkLanguage: string = 'en';
 
-  setActive(linkName: string) {
-    this.activeLink = linkName; 
-    console.log('activeLink', this.activeLink);
-       
+  /** Subscription to track mobile view changes */
+  private subscription!: Subscription;
+
+  /**
+   * Constructor injecting element reference.
+   * @param elRef Reference to the component's host element.
+   */
+  constructor(private elRef: ElementRef) {}
+
+  /**
+   * Lifecycle hook called after component initialization.
+   * Subscribes to the isMobile$ observable to react to screen size changes.
+   */
+  ngOnInit() {
+    this.isMobile = this.global.isMobile;
+    this.subscription = this.global.isMobile$.subscribe(value => {
+      this.isMobile = value;
+    });
   }
 
-  setActiveLanguage(linkName: string){
+  /**
+   * Lifecycle hook called just before the component is destroyed.
+   * Cleans up the subscription to avoid memory leaks.
+   */
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
+  }
+
+  /**
+   * Sets the currently active navigation link.
+   * @param linkName The name of the link to activate.
+   */
+  setActive(linkName: string) {
+    this.activeLink = linkName;
+    console.log('activeLink', this.activeLink);
+  }
+
+  /**
+   * Sets the current language and triggers the language change animation.
+   * @param linkName The language code (e.g., 'en', 'de') to switch to.
+   */
+  setActiveLanguage(linkName: string) {
     this.global.switchLanguageAnimation(linkName);
     this.activeLinkLanguage = linkName;
     this.global.language = linkName;
   }
-  
 
+  /**
+   * Toggles the visibility of the mobile menu (hamburger menu).
+   */
+  showMenu() {
+    this.global.hamActive = !this.global.hamActive;
+  }
 }

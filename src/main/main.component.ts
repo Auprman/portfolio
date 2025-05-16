@@ -11,22 +11,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from "../shared/footer/footer.component";
 import { BurgermenuComponent } from "../shared/burgermenu/burgermenu.component";
 import { GlobalService } from '../global.service';
-import { ScrollFadeDirective } from '../shared/scroll-fade.directive';
+import { NavbarMobileStickyComponent } from "../sections/navbar-mobile-sticky/navbar-mobile-sticky.component";
 
 @Component({
   selector: 'app-main',
   imports: [
-    AtfComponent, 
-    NavbarComponent, 
-    WhyMeComponent, 
-    RouterModule, 
-    SkillsComponent, 
-    ProjectsComponent, 
-    ContactComponent, 
-    ReferencesComponent, 
-    ReactiveFormsModule, 
-    FooterComponent, 
-    BurgermenuComponent,],
+    AtfComponent,
+    NavbarComponent,
+    WhyMeComponent,
+    RouterModule,
+    SkillsComponent,
+    ProjectsComponent,
+    ContactComponent,
+    ReferencesComponent,
+    ReactiveFormsModule,
+    FooterComponent,
+    BurgermenuComponent,
+    NavbarMobileStickyComponent
+],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
@@ -40,5 +42,6 @@ export class MainComponent {
   onResize(event: Event) {
     this.global.onResize();
   }
-  
+    
+
 }

@@ -1,0 +1,40 @@
+<nav [id]="'navbar-mobile-sticky'" 
+     [class.fixed]="isFixed"
+     [ngClass]="{ 'show-menu': isMobile && global.hamActive }">
+
+  <app-logo class="logo"
+            signSrc="/assets/img/logo/logo-dark.svg"
+            textColor="dark">
+  </app-logo>
+
+  <div (click)="showMenu()" [class.active]="global.hamActive" class="ham-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+<div 
+  class="dropdown-wrapper" 
+  [class.visible]="isFixed" 
+  [class.open]="global.hamActive">
+  <div class="dropdown">
+      <a href="#why-me" [class.active]="activeLink === 'why-me-mobile'" (click)="setActive('why-me-mobile');showMenu()">
+        @if (global.language === 'en') { Why me } @else { Warum ich }
+      </a>
+      <a href="#skills" [class.active]="activeLink === 'skills-mobile'" (click)="setActive('skills-mobile');showMenu()">
+        @if (global.language === 'en') { Skills } @else { Fähigkeiten }
+      </a>
+      <a href="#projects" [class.active]="activeLink === 'projects-mobile'" (click)="setActive('projects-mobile');showMenu()">
+        @if (global.language === 'en') { Projects } @else { Projekte }
+      </a>
+      <a href="#contact" [class.active]="activeLink === 'contact-mobile'" (click)="setActive('contact-mobile');showMenu()">
+        @if (global.language === 'en') { Contact me } @else { Kontakt }
+      </a>
+
+      <div class="language">
+        <a (click)="setActiveLanguage('de')" [class.active]="activeLinkLanguage === 'de'">DE</a>
+        <a (click)="setActiveLanguage('en')" [class.active]="activeLinkLanguage === 'en'">EN</a>
+      </div>
+    </div>
+  </div>
+

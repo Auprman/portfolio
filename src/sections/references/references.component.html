@@ -1,4 +1,4 @@
-<section>
+<section [class.fade-out]="global.isTransitioningLanguage">
      <h2>   @if(!isMobile && global.language === 'en'){ Need a teamplayer? Here what my colleagues said about me} 
             @else if (!isMobile && global.language === 'de') {Teamplayer gesucht? Das sagen meine Teamkollegen über mich}
             @if(isMobile && global.language === 'en'){ Need a teamplayer? } 

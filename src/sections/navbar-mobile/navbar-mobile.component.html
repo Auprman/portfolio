@@ -7,7 +7,7 @@
       <a 
       href="#why-me" 
       [class.active]="activeLink === 'why-me-mobile'" 
-      (click)="setActive('why-me-mobile')">
+      (click)="setActive('why-me-mobile');showMenu()">
        @if (global.language === 'en') { 
       Why me 
     } @else { 
@@ -17,7 +17,7 @@
     <a  
       href="#skills" 
       [class.active]="activeLink === 'skills-mobile'" 
-      (click)="setActive('skills-mobile')">
+      (click)="setActive('skills-mobile');showMenu()">
       @if (global.language === 'en') { 
       Skills
     } @else { 
@@ -27,7 +27,7 @@
     <a 
       href="#projects" 
       [class.active]="activeLink === 'projects-mobile'" 
-      (click)="setActive('projects-mobile')">
+      (click)="setActive('projects-mobile');showMenu()">
       @if (global.language === 'en') { 
       Projects
     } @else { 
@@ -37,7 +37,7 @@
     <a 
       href="#contact" 
       [class.active]="activeLink === 'contact-mobile'" 
-      (click)="setActive('contact-mobile')">
+      (click)="setActive('contact-mobile');showMenu()">
       @if (global.language === 'en') { 
       Contact me
     } @else { 

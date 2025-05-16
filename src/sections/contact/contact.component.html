@@ -1,4 +1,4 @@
-<section>
+<section [class.fade-out]="global.isTransitioningLanguage">
     <div  class="contact-main">
         <div class="headline">
             @if (global.language === 'en') { <h2>Contact me</h2>  } @else { <h2>Kontakt</h2> }
@@ -43,8 +43,17 @@
                             Email
                         </ng-container>
                         </label>
-                        <input [ngStyle]="contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || submitted) ? { 'border': '1px solid #E44C36' } : null"
-                        id="email" formControlName="email" type="email" />
+                      <input
+                          type="email"
+                          id="email"
+                          formControlName="email"
+                          [attr.placeholder]="getDynamicPlaceholder('email')"
+                          [ngClass]="{
+                            'responsive-placeholder': true,
+                            'placeholder-error': contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || submitted),
+                            'border-error': contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || submitted)
+                          }"
+                        />
                     </div>    
                     
                     <div class="form-field">
@@ -56,8 +65,17 @@
                             @if(global.language === 'en') {Your name} @else {Name}
                             </ng-container>
                         </label>
-                        <input [ngStyle]="contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || submitted) ? { 'border': '1px solid #E44C36' } : null"
-                         id="name" formControlName="name" type="text" />
+                        <input
+                          type="text"
+                          id="name"
+                          formControlName="name"
+                          [attr.placeholder]="getDynamicPlaceholder('name')"
+                          [ngClass]="{
+                            'responsive-placeholder': true,
+                            'placeholder-error': contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || submitted),
+                            'border-error': contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || submitted)
+                          }"
+/>
                     </div>
                </div>
                
@@ -71,7 +89,18 @@
                         @else {Nachricht}
                        </ng-container>
                   </label>
-                  <textarea [ngStyle]="contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted) ? { 'border': '1px solid #E44C36' } : null" id="message" formControlName="message" rows="6"></textarea>
+                  <textarea 
+                          id="message"
+                          type="text"
+                          formControlName="message"
+                          [attr.placeholder]="getDynamicPlaceholder('message')"
+                          rows="5"
+                          [ngClass]="{
+                                      'responsive-placeholder': true,
+                                      'placeholder-error': contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted),
+                                      'border-error': contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted)
+                                    }"
+                  ></textarea>
                 </div>
 
                 <div class="form-field checkbox">
