@@ -5,43 +5,44 @@ $BtnHoverBg: #F8F5EC1F;
 $projectBg: #89BCD912;
 $error: #E44C36;
 
-h1{
-    font-family: Anta;
-    font-size: 88px;
-    color: $fontLightPurple;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 24px;
-    cursor: default;
+h1 {
+  font-family: Anta;
+  font-size: 88px;
+  color: $fontLightPurple;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 24px;
+  cursor: default;
 }
-h2{
-    font-family: Josefin Sans;
-    font-size: 40px;
-    color: $fontLightPurple;
-    font-weight: 400;
-    text-align: center;
-    cursor: default;
+
+h2 {
+  font-family: Josefin Sans;
+  font-size: 40px;
+  color: $fontLightPurple;
+  font-weight: 400;
+  text-align: center;
+  cursor: default;
 }
 
 #mypic {
-    max-height: 40vh;
-    max-width: 100%;
-    height: auto;
-    width: auto;
-    z-index: 2;
-    transition: all 0.4s ease;
-  }
+  max-height: 40vh;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
 
 .main-container-atf {
-    margin-top: 41px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    height: 100vh;
-    max-width: clamp(320px, 90%, 1440px);
+  margin-top: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  max-width: clamp(320px, 90%, 1440px);
 }
 
 .left-section {
@@ -80,6 +81,7 @@ h2{
     transition: opacity 0.3s ease;
     pointer-events: none;
   }
+
   &:hover::after {
     opacity: 1;
   }
@@ -97,88 +99,90 @@ h2{
 
 
 .fontAnta {
-    font-family: 'Anta';
+  font-family: 'Anta';
 }
 
 .fontJSans {
-    font-family: 'Josefin Sans';
+  font-family: 'Josefin Sans';
 }
 
 
 .fw500 {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .right-section {
-    height: 70vh;
-    width: 60vw;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center; 
-    position: relative;
+  height: 70vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .upper-section {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; 
-    flex-direction: column;
-    gap: 16px;
-    position: absolute; 
-    right: 0; 
-    &:nth-child(1){
-        right: 50%;
-        height: 89px;
-        width: 38px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 16px;
+  position: absolute;
+  right: 0;
 
-    a {
-      position: relative;
-      display: inline-block;
+  &:nth-child(1) {
+    right: 50%;
+    height: 89px;
+    width: 38px;
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.125s ease;
       width: 30px;
       height: 30px;
-
-      .icon {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: opacity 0.125s ease;
-        width: 30px;
-        height: 30px;
-      }
-
-      .hover {
-        opacity: 0;
-      }
-
-      &:hover .hover {
-        opacity: 1;
-      }
-
-      &:hover .default {
-        opacity: 0;
-      }
     }
-    .arrow-down{
-        img{
-            width: 39px;
-            height: 89px;        
-        }
+
+    .hover {
+      opacity: 0;
     }
+
+    &:hover .hover {
+      opacity: 1;
+    }
+
+    &:hover .default {
+      opacity: 0;
+    }
+  }
+
+  .arrow-down {
+    img {
+      width: 39px;
+      height: 89px;
+    }
+  }
 }
 
 .lower-section {
-    display: flex !important;
-    justify-content: center;
-    width: 100%;    
+  display: flex !important;
+  justify-content: center;
+  width: 100%;
 }
 
 .ham-inactive,
@@ -189,10 +193,10 @@ h2{
   visibility: hidden;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-  display: block; 
+  display: block;
 }
 
-.ham-active {  
+.ham-active {
   opacity: 1;
   visibility: visible;
   width: 90vw;
@@ -201,128 +205,137 @@ h2{
 }
 
 .hide {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
-.hide-bg-img{
-    background-image: none !important;
+.hide-bg-img {
+  background-image: none !important;
 }
 
 .nav-bar-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  min-width: 200px;
+  gap: 24px;
+}
+
+.left-section.nav-open {
+  height: auto !important;
+  justify-content: center;
+  align-items: center;
+
+  .nav-bar-mobile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 0;
-    min-width: 200px;
     gap: 24px;
   }
 
-.left-section.nav-open {
-    height: auto !important;
-    justify-content: center;
+  .links-navbar {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  
-    .nav-bar-mobile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-    }
-  
-    .links-navbar {
-      display: flex;
-      flex-direction: column;
-      align-items: center;      
-  
-      a {
-        font-size: 20px;
-        color: $fontLightPurple;
-        text-decoration: none;
-        padding: 8px 0;
-      }
+
+    a {
+      font-size: 20px;
+      color: $fontLightPurple;
+      text-decoration: none;
+      padding: 8px 0;
     }
   }
-
-@media (max-width:1433px){
-    .links:nth-child(1) {
-        right: 50%;
-    }
 }
 
-@media (max-width:1290px){
-    h1{
-        font-size: 72px;
-    }
-    h2{
-        font-size: 32px;
-    }
-} 
+@media (max-width:1433px) {
+  .links:nth-child(1) {
+    right: 50%;
+  }
+}
+
+@media (max-width:1290px) {
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}
 
 @media (max-width: 1024px) {
-    .main-container-atf{
-        margin-top: 85px;
-        justify-content: flex-start;
-        flex-direction: column;
-        height: auto;
-    }
-    h1{
-        font-size: 56px;
-    }
-    h2{
-        font-size: 32px;
-        margin-bottom: 8px;
-    }
-    .upper-section{
-        display: none;
-    }
-    .left-section{
-        width: 60vw;
-        height: unset !important;
-        padding: 60px 0;
-        flex-direction: row !important;
-    }
-    }  
+  .main-container-atf {
+    margin-top: 85px;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: auto;
+  }
 
-    
+  h1 {
+    font-size: 56px;
+  }
 
-    .right-section{
-        justify-content: flex-start;
-        width: auto;
-        height: auto;
-    }
+  h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
 
-    .links{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 16px;
-        right: 0;
-        &:nth-child(1){
-            height: auto;
-            margin-top: 24px;
-        }
-        a{
-            width: auto;
-        }
-    .links-navbar{
-        display: flex;
-    }
+  .upper-section {
+    display: none;
+  }
+
+  .left-section {
+    width: 60vw;
+    height: unset !important;
+    padding: 60px 0;
+    flex-direction: row !important;
+  }
 }
-    
+
+
+
+.right-section {
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  right: 0;
+
+  &:nth-child(1) {
+    height: auto;
+    margin-top: 24px;
+  }
+
+  a {
+    width: auto;
+  }
+
+  .links-navbar {
+    display: flex;
+  }
+}
+
 @media (max-width: 652px) {
-    h2{
-        font-size: 24px;
-    }
+  h2 {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 380px) {
-    h1{
-        font-size: 40px;
-    }
-    h2{
-        font-size: 18px;
-    }
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
 }

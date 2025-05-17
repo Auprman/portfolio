@@ -7,99 +7,102 @@ $error: #E44C36;
 
 
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 66px;
-    height: 73px;
-    background-color: transparent;
-    transition: transform 0.1s ease;
-    transform-origin: center center;
-    will-change: transform;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 66px;
+  height: 73px;
+  background-color: transparent;
+  transition: transform 0.1s ease;
+  transform-origin: center center;
+  will-change: transform;
 
-    &:hover {
-      transform: scale(1.10);
-    }
+  &:hover {
+    transform: scale(1.10);
+  }
 }
 
 .logo-sign {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
 
-    img {
-      background-color: transparent;
-    }
+  img {
+    background-color: transparent;
+  }
 }
 
 .logo-braces {
-    background-color: transparent;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo-lettering {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: transparent;
-    transition: ease 0.125s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  transition: ease 0.125s;
+  will-change: transform;
+
+  &:hover>span:nth-child(1) {
+    transform: scale(1.20);
+    transition: transform 0.2s ease;
     will-change: transform;
+  }
 
-    &:hover > span:nth-child(1) {
-        transform: scale(1.20);     
-        transition: transform 0.2s ease;
-        will-change: transform;       
+  >span {
+    font-size: 16px;
+    background-color: transparent;
+    color: $fontLightPurple;
+    cursor: default;
+
+    &:nth-child(2) {
+      color: $lightBlue;
+    }
+  }
+
+  &.light {
+    span {
+      color: #F8F5EC;
     }
 
-    > span {
-      font-size: 16px;
-      background-color: transparent;
-      color: $fontLightPurple;
-      cursor: default;
+    span:nth-child(2) {
+      color: #89BCD9;
+    }
+  }
 
-      &:nth-child(2) {
-        color: $lightBlue;
-      }
+  &.dark {
+    span {
+      color: #F8F5EC;
     }
-    &.light {
-      span {
-        color: #F8F5EC;
-      }
-      span:nth-child(2) {
-        color: #89BCD9;
-      }
+
+    span:nth-child(2) {
+      color: #262E34;
     }
-  
-    &.dark {
-      span {
-        color: #F8F5EC;
-      }
-      span:nth-child(2) {
-        color: #262E34;
-      }
-    }
+  }
 }
 
 .fontAnta {
-    font-family: 'Anta';
+  font-family: 'Anta';
 }
 
 .fontJSans {
-    font-family: 'Josefin Sans';
-    font-weight: 300;
+  font-family: 'Josefin Sans';
+  font-weight: 300;
 }
 
 @media (max-width: 1023px) {
   .logo-lettering {
-    span{
+    span {
       font-size: 14px;
     }
-    
+
   }
 }

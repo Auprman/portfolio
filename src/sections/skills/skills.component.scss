@@ -1,11 +1,11 @@
 $mainBgColor: #262E34;
 $fontLightPurple : #F8F5EC;
 $lightBlue : #89BCD9;
-$BtnHoverBg  : #F8F5EC1F;
+$BtnHoverBg : #F8F5EC1F;
 $fJs: 'Josefin Sans';
 
 
-section{
+section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,12 +14,12 @@ section{
     transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
 }
 
-.fade-out{
+.fade-out {
     opacity: 0;
 }
 
 
-.skills{
+.skills {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,26 +30,28 @@ section{
     max-width: clamp(320px, 90%, 1440px);
 }
 
-h1{
+h1 {
     font-size: 60px;
     font-weight: 400;
     color: $lightBlue;
 }
 
-.left-section-skills{
+.left-section-skills {
     display: flex;
     flex-wrap: wrap;
     width: 35%;
-    p{
+
+    p {
         font-family: 'Josefin Sans';
         color: $lightBlue;
         font-size: 18px;
     }
 }
 
-.button{
-display: none;
-    a{
+.button {
+    display: none;
+
+    a {
         font-family: 'Josefin Sans';
         font-size: 18;
         color: #89BCD9;
@@ -60,14 +62,14 @@ display: none;
         padding: 13px 30px;
         transition: background-color 0.125s ease-in-out;
 
-        &:hover{
+        &:hover {
             background-color: $BtnHoverBg;
         }
     }
 }
 
 
-.symbol{
+.symbol {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,15 +77,16 @@ display: none;
     padding: 16px;
 }
 
-.skill-symbols{
-    display: flex;    
-    p{
+.skill-symbols {
+    display: flex;
+
+    p {
         font-size: 14px !important;
         padding: 8px 0;
     }
 }
 
-.right-section{
+.right-section {
     display: flex;
     min-width: 50%;
 }
@@ -98,11 +101,11 @@ display: none;
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
-    padding: 56px 0; 
+    padding: 56px 0;
     transition: 0.2s all ease-in-out;
 
     &:hover {
-        background-image: url('/assets/img/bg-img/references-bg-hover.svg');        
+        background-image: url('/assets/img/bg-img/references-bg-hover.svg');
     }
 
     p {
@@ -116,92 +119,103 @@ display: none;
 
     img {
         height: 32px;
-        width: 32px;        
+        width: 32px;
     }
 }
 
-.headline-mobil{
+.headline-mobil {
     display: none;
 }
 
 @media (max-width: 1024px) {
-    .skills{
+    .skills {
         flex-direction: column;
         height: auto;
     }
-    .left-section-skills{
+
+    .left-section-skills {
         width: auto;
         justify-content: center;
     }
-    .button{
+
+    .button {
         display: flex;
     }
-    .button{
-        a{
+
+    .button {
+        a {
             margin-top: 40px;
             color: $mainBgColor;
             background-color: $lightBlue;
-            &:hover{
+
+            &:hover {
                 background-color: $lightBlue;
             }
-        }        
+        }
     }
-    .right-section-current{
-        p{
+
+    .right-section-current {
+        p {
             text-align: left;
         }
     }
 }
 
 @media (max-width: 830px) {
-    .right-section{
+    .right-section {
         flex-direction: column;
         background-image: none;
     }
-    .right-section-current{
+
+    .right-section-current {
         flex-direction: row-reverse;
         background-image: none;
+
         &:hover {
-            background-image: none;        
+            background-image: none;
         }
+
         padding: 32px 0;
     }
 
-    .skill-symbols{
+    .skill-symbols {
         margin-left: 8px;
         height: 140px;
-        background-image:url('/assets/img/bg-img/references-bg-hover.svg');
+        background-image: url('/assets/img/bg-img/references-bg-hover.svg');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
     }
 
-    .symbol{
+    .symbol {
         padding: 8px;
-    }    
+    }
 
-    .headline{
+    .headline {
         display: none;
     }
-    .headline-mobil{
+
+    .headline-mobil {
         display: flex;
         justify-content: center;
         font-size: 18px;
         color: $lightBlue;
         font-family: $fJs;
-        p{
+
+        p {
             padding-top: 40px;
             font-size: 16px;
         }
-    }  
-    p{
+    }
+
+    p {
         padding: 0 8px;
     }
 
 }
 
 @media (max-width: 652px) {
-    h1{
+    h1 {
         font-size: 32px;
     }
 }

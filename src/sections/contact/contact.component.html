@@ -140,6 +140,10 @@
                 <img src="/assets/img/arrows/arrow-up-hover.png" alt="" class="icon hover">
               </a>
     </div>
-    
-
+        <div class="toast" *ngIf="showToast">
+            <div class="toast-content">
+                <img src="/assets/img/icon-contact/pp-checked.svg" alt="Success icon">
+                <p>@if (global.language === 'en') {Your message has been sent successfully.} @else {Ihre Nachricht wurde erfolgreich gesendet.}</p>
+            </div>
+        </div>
 </section>

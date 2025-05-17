@@ -43,6 +43,7 @@ export class ContactComponent {
   mailIsHovered = false;
   phoneIsHovered = false;
   mailTest = true;
+  showToast = false;
 
   contacMeTextEn: string = 
     'I am currently looking for new opportunities in frontend development—' +
@@ -91,6 +92,7 @@ export class ContactComponent {
         this.post.options
       ).subscribe({
         next: () => {
+          this.displayToast()
           this.contactForm.reset();
           this.submitted = false;
         },
@@ -164,4 +166,10 @@ export class ContactComponent {
 
     return '';
   }
+
+  displayToast() {
+  this.showToast = false;
+  setTimeout(() => this.showToast = true, 10);
+  setTimeout(() => this.showToast = false, 3000); 
+}
 }
