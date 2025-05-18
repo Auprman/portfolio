@@ -3,3 +3,22 @@
       display: none;
     }
   }
+
+
+  #why-me,
+#skills,
+#projects,
+#references,
+#contact {
+  scroll-margin-top: 104px; 
+}
+
+@media (max-width: 1024px) {
+  #why-me
+   {
+    scroll-margin-top: -106px; 
+  }
+  #projects{
+    scroll-margin-top: 32px; 
+  }
+}

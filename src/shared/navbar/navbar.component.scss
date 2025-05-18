@@ -6,7 +6,7 @@ $lightBlue : #89BCD9;
 
 #navbar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center; // zentriert den inneren Container
   align-items: center;
   height: 104px;
   width: 100%;
@@ -20,6 +20,14 @@ $lightBlue : #89BCD9;
     position: fixed;
     top: 0;
     bottom: auto;
+  }
+
+  .navbar-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
   }
 }
 

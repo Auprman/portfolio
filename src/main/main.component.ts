@@ -30,13 +30,17 @@ import { NavbarMobileStickyComponent } from "../sections/navbar-mobile-sticky/na
     NavbarMobileStickyComponent
 ],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  styleUrl: './main.component.scss', 
 })
+
+
 export class MainComponent {
   title = 'portfolio';  
   constructor(private global: GlobalService) {
     this.global.onResize(); 
   }
+
+  
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {

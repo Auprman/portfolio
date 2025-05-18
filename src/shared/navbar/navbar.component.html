@@ -1,10 +1,12 @@
 <nav [id]="'navbar'" [class.fixed]="isFixed">
-  <app-logo 
-    signSrc="/assets/img/logo/logo-dark.svg"
-    textColor="dark">
-  </app-logo>
+  
 
-  <div class="links-navbar" [class.fade-out]="global.isTransitioningLanguage">
+  <div class="navbar-content">
+    <app-logo 
+      signSrc="/assets/img/logo/logo-dark.svg"
+      textColor="dark">
+    </app-logo>
+    <div class="links-navbar" [class.fade-out]="global.isTransitioningLanguage">
     <a 
     href="#why-me" 
     [class.active]="activeLink === 'why-me'"    
@@ -59,4 +61,5 @@
       EN
     </a>
   </div>
+  </div>  
 </nav>
