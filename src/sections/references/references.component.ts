@@ -8,7 +8,7 @@ interface References {
   project: string;
   referenceEn: string;
   referenceDe: string;
-  link: string;
+  link?: string;
 }
 
 @Component({
@@ -52,7 +52,7 @@ export class ReferencesComponent {
    */
   refs: References[] = [
     {
-      name: 'Bartosz K.',
+      name: 'Bartosz Kuczek',
       project: 'Join',
       referenceEn:
         'Working with Felix was a real pleasure. He was dedicated, reliable, and always open to collaboration. On top of his great team spirit, I especially appreciated the quality of his code – clean, well-structured, and thoughtfully written. It really made working together smooth and enjoyable.',
@@ -61,22 +61,27 @@ export class ReferencesComponent {
       link: 'https://www.linkedin.com/in/bartosz-kuczek/?originalSubdomain=de',
     },
     {
-      name: 'Mareike K.',
-      project: 'El-Pollo-Loco',
+      name: 'Mareike Karl',
+      project: 'Join',
       referenceEn:
-        'Lorem Englisch, dolor sit amet consectetur adipisicing elit. Adipisci a quis deserunt dolor nisi quos vero aperiam, rerum officiis quaerat autem, ipsa odit omnis earum non, nam porro praesentium quo enim qui necessitatibus fugiat. Incidunt ullam ducimus deserunt pariatur qui.',
+        "I tested one of Felix’s projects and was genuinely impressed. I know him personally and can say he’s reliable, precise, and highly motivated. The application was well-structured and showed great attention to detail. He quickly gets into new topics, which was clear in his work. I'm looking forward to our upcoming collaboration.",
+      
       referenceDe:
-        'Lorem Deutsch, dolor sit amet consectetur adipisicing elit. Adipisci a quis deserunt dolor nisi quos vero aperiam, rerum officiis quaerat autem, ipsa odit omnis earum non, nam porro praesentium quo enim qui necessitatibus fugiat. Incidunt ullam ducimus deserunt pariatur qui.',
+        'Ich habe eines von Felix’ Projekten getestet und war wirklich beeindruckt. Ich kenne ihn persönlich und weiß, dass er zuverlässig, genau und sehr motiviert ist. Die Anwendung war klar strukturiert und mit viel Liebe zum Detail umgesetzt. Er arbeitet sich schnell in neue Themen ein – das hat man seinem Projekt deutlich angemerkt. Ich freue mich auf unsere Zusammenarbeit.',
+
+
       link: '#why-me',
     },
     {
-      name: 'Johannes K.',
-      project: 'Join',
+      name: 'Kerstin K.',
+      project: 'El-Pollo-Loco',
       referenceEn:
-        'Lorem Englisch, dolor sit amet consectetur adipisicing elit. Adipisci a quis deserunt dolor nisi quos vero aperiam, rerum officiis quaerat autem, ipsa odit omnis earum non, nam porro praesentium quo enim qui necessitatibus fugiat. Incidunt ullam ducimus deserunt pariatur qui.',
+        'I tested Felix’s Pokédex project and was genuinely impressed by his work. He puts great emphasis on detail and appealing design – and it clearly shows. What stood out to me were his creative ideas and his openness to feedback, which he consistently turned into thoughtful and well-executed improvements. It’s clear that quality truly matters to him.',
+
+
       referenceDe:
-        'Lorem Deutsch, dolor sit amet consectetur adipisicing elit. Adipisci a quis deserunt dolor nisi quos vero aperiam, rerum officiis quaerat autem, ipsa odit omnis earum non, nam porro praesentium quo enim qui necessitatibus fugiat. Incidunt ullam ducimus deserunt pariatur qui.',
-      link: '#why-me',
+        'Ich habe Felix’ Pokédex-Projekt getestet und war sehr angetan von seiner Arbeit. Er legt großen Wert auf Details und ein ansprechendes Design – und das merkt man sofort. Besonders gefallen haben mir seine kreativen Ideen sowie die Bereitschaft, Feedback offen anzunehmen und Änderungen schnell und sauber umzusetzen. Man spürt, dass ihm Qualität wirklich am Herzen liegt.',
+      
     }
   ];
 }
