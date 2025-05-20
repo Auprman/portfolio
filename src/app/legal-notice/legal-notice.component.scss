@@ -38,7 +38,7 @@ h1 {
   font-family: 'Anta';
   font-size: 60px;
   color: $lightBlue;
-  margin-bottom: 64px;
+  margin: 96px 0;
   text-align: center;
 }
 
@@ -46,6 +46,14 @@ h2 {
   font-family: 'Josefin Sans';
   font-size: 40px;
   color: $fontLightPurple;
+  margin-top: 32px;
+  text-decoration: underline;
+}
+
+h3 {
+  font-family: 'Josefin Sans';
+  font-size: 24px;
+  color: $lightBlue;
   margin-top: 32px;
   text-decoration: underline;
 }
@@ -144,6 +152,16 @@ ul.index a {
   font-size: 24px;
   color: $lightBlue;
   text-decoration: none;
+}
+
+
+.fade-transition {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-transition.show {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

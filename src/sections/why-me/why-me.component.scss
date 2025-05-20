@@ -91,6 +91,10 @@ h2 {
 
 
 @media (max-width: 1024px) {
+
+    section{
+        padding-top: 120px;
+    }
     .text-area {
         flex-direction: column;
     }

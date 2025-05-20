@@ -440,4 +440,13 @@ Responsive Design
     padding: 8px 16px;
     font-size: 14px;
   }
+
+  @media (max-width: 500px) {
+  h2 {
+    font-size: 24px;
+    font-family: 'Anta';
+    font-weight: 500;
+  }
+  
+}
 }

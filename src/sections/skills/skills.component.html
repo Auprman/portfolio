@@ -5,7 +5,7 @@
             @for (skill of skills; track $index) {
                     <div class="symbol">
                         <img src="{{skill.path}}" alt="{{skill.name}}-symbol">
-                        <p>{{skill.name}}</p>
+                        @if(!global.isMobile){<p>{{skill.name}}</p>}
                     </div>
                 }
         </div>

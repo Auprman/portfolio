@@ -18,6 +18,13 @@ section {
     opacity: 0;
 }
 
+h2 {
+    margin-top: 72px;
+    font-size: 54px;
+    font-weight: 400;
+    color: $lightBlue;
+
+}
 
 .skills {
     display: flex;
@@ -55,7 +62,7 @@ h2 {
 
     a {
         font-family: 'Josefin Sans';
-        font-size: 18;
+        font-size: 18px;
         color: #89BCD9;
         background-color: transparent;
         text-decoration: none;
@@ -206,12 +213,13 @@ h2 {
 
         p {
             padding-top: 40px;
-            font-size: 16px;
+            font-size: 16px ;
         }
     }
 
     p {
         padding: 0 8px;
+        font-size: 16px;
     }
 
 }
@@ -220,4 +228,20 @@ h2 {
     h1 {
         font-size: 32px;
     }
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 24px;
+  }
+  
+}
+@media (max-width: 390px) {
+  .right-section-current{
+    flex-direction: column;
+  }
+  
+  .skill-symbols{
+    padding-bottom: 24px;
+  }
+}
 }

@@ -21,6 +21,7 @@ export class GlobalService {
   isTransitioning = false;
   isTransitioningLanguage = false;
   hamActive: boolean = false;
+  isLegalNoticePage = false;
 
   /** Name of the currently active project */
   activeProject: string = 'Join';

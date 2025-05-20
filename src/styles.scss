@@ -122,3 +122,11 @@ h2 {
   opacity: 1;
   transform: translateY(0);
 }
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 32px !important;
+    padding-bottom: 40px;
+  }
+  
+}

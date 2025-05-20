@@ -1,7 +1,7 @@
-
+<app-simple-navbar></app-simple-navbar>
 <section class="privacy-wrapper">
-  <div id="top" class="privacy-content">
 
+  <div *ngIf="global.language === 'de'" class="privacy-content">
 
       <h1>Impressum</h1>
   <p>
@@ -78,10 +78,78 @@
   >
   <br />
 
-
-    
   </div>
-  <!-- Irgendwie ist der link hier nicht ganz korrekt-- Lädt die Seite neu -->
+
+  <div *ngIf="global.language === 'en'" class="privacy-content">
+
+
+    <h1>Legal Notice</h1>
+    <p>
+      Felix Oppermann<br />
+      Im Schapenkamp 14<br />
+      38104 Braunschweig, Germany
+    </p>
+    <p>
+      Phone: +49 178 1666079<br />
+      Email:
+      <a href="mailto:mail@felix-oppermann.com">mail&#64;felix-oppermann.com</a>
+    </p>
+
+    <h2>Disclaimer – Legal Information</h2>
+
+    <h3>§ 1 Warning Regarding Content</h3>
+    <p>
+      The free and accessible content of this website has been created with the greatest possible care.
+      However, the provider of this website does not guarantee the accuracy and timeliness of the provided
+      free and accessible journalistic guides and news. Articles marked by name reflect the opinion of the
+      respective author and not necessarily the opinion of the provider. Merely by accessing the free and
+      accessible content, no contractual relationship is established between the user and the provider,
+      as there is a lack of legal binding intent on the part of the provider.
+    </p>
+
+    <h3>§ 2 External Links</h3>
+    <p>
+      This website contains links to third-party websites ("external links"). These websites are subject to
+      the liability of the respective operators. At the time of the initial linking of the external links,
+      the provider checked the third-party content for any legal violations. No legal violations were apparent
+      at that time. The provider has no influence on the current and future design and content of the linked pages.
+      Setting external links does not mean that the provider adopts the content behind the reference or link as its own.
+      Continuous monitoring of external links is not reasonable for the provider without concrete evidence of legal
+      violations. If legal violations become known, such external links will be deleted immediately.
+    </p>
+
+    <h3>§ 3 Copyright and Performance Rights</h3>
+    <p>
+      The content published on this website is subject to German copyright and performance protection law.
+      Any utilization not permitted under German copyright and performance protection law requires prior
+      written consent from the provider or respective rights holder. This applies in particular to
+      reproduction, editing, translation, storage, processing, or playback of content in databases
+      or other electronic media and systems. Third-party content and rights are marked as such.
+      Unauthorized reproduction or distribution of individual content or entire pages is not permitted
+      and punishable. Only the production of copies and downloads for personal, private, and non-commercial
+      use is allowed.
+    </p>
+    <p>
+      The presentation of this website in external frames is only permitted with written permission.
+    </p>
+
+    <h3>§ 4 Special Terms of Use</h3>
+    <p>
+      Insofar as special conditions for individual uses of this website deviate from the aforementioned paragraphs,
+      this will be expressly indicated at the relevant location. In this case, the special terms of use apply
+      in each individual case.
+    </p>
+    <br />
+    <p>Source:</p>
+    <a href="https://www.fachanwalt.de/impressum-generator/" target="_blank">
+      www.fachanwalt.de
+    </a>
+    <br />
+
+  </div>
+
+
+
   <div class="to-top">
     <a  (click)="scrolltoTop()" fragment="#top" class="arrow-up-mobile">
     <img
@@ -96,7 +164,7 @@
     />
   </a>
   </div>
-  <a class="link-back" href="/">Zurück</a>
+  <a class="link-back" href="/">@if(this.global.language === 'de'){Zurück}@else{Back}</a>
 </section>
 
 <app-footer></app-footer>

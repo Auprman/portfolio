@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { GlobalService } from '../../global.service';
 import { ScrollFadeDirective } from '../../shared/scroll-fade.directive';
+import { CommonModule } from '@angular/common';
+
 
 /**
  * Interface representing a skill with a name and image path.
@@ -12,7 +14,7 @@ interface Skill {
 
 @Component({
   selector: 'app-skills',
-  imports: [ScrollFadeDirective],
+  imports: [ScrollFadeDirective, CommonModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
