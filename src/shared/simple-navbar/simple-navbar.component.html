@@ -1,0 +1,26 @@
+<nav [id]="'navbar'" [class.fixed]="isFixed">
+  
+
+  <div class="navbar-content">
+    <app-logo 
+      signSrc="/assets/img/logo/logo-dark.svg"
+      textColor="dark">
+    </app-logo>
+    <div class="links-navbar" [class.fade-out]="global.isTransitioningLanguage">
+    
+  </div>
+
+  <div class="language">
+    <a 
+      (click)="setActiveLanguage('de')" 
+      [class.active]="activeLinkLanguage === 'de'">
+      DE
+    </a>
+    <a 
+      (click)="setActiveLanguage('en')" 
+      [class.active]="activeLinkLanguage === 'en'">
+      EN
+    </a>
+  </div>
+  </div>  
+</nav>
