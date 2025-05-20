@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject,OnInit } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
 import { CommonModule } from '@angular/common';
 import { GlobalService } from '../../global.service';
+
 
 
 @Component({
@@ -13,10 +14,9 @@ import { GlobalService } from '../../global.service';
 export class FooterComponent {
 
   global = inject(GlobalService);
-
+  
   githubHovered:boolean = false;
   mailHovered:boolean = false;
   linkedinHovered:boolean = false;
-
 
 }

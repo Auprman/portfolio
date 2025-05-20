@@ -42,8 +42,8 @@
       </div>     
 
       <div class="legal-notice-mobile" >
-        <a href="legal-notice">@if (global.language === 'en') {Legal notice} @else {Impressum}</a>
-        <p>© Felix Oppermann 2025</p>
+       @if(global.isLegalNoticePage!= true){<a href="legal-notice">@if (global.language === 'en') {Legal notice} @else {Impressum}</a>}
+        <p> © Felix Oppermann 2025</p>
       </div>
 
     </div>
