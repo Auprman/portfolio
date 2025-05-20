@@ -109,7 +109,7 @@ a {
     .ref-main {
         display: flex;
         overflow-x: auto !important;
-        scroll-snap-type: center !important;
+        scroll-snap-type: x mandatory!important;
         margin: 16px;
         scroll-behavior: smooth;
         justify-content: flex-start !important;
