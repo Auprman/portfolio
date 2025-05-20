@@ -1,14 +1,14 @@
 <section [class.fade-out]="global.isTransitioningLanguage"> 
     @if (global.language === 'en') { 
-      <h1>My Projects</h1> 
+      <h2>My Projects</h2> 
     } 
-    @else { <h1>Meine Projekte</h1>
+    @else { <h2>Meine Projekte</h2>
     }
     <div appScrollFade class="project-main-card">
       <nav>
         <button [class.active]="global.activeProject === 'Join'" 
         (click)="global.setActiveProject('Join');" 
-        class="button">@if(global.isMobile){@if (global.language === 'en') {1. Project} @else {1. Projekt}}@else{2. {{global.projects[0].projectname}}}</button>
+        class="button">@if(global.isMobile){@if (global.language === 'en') {1. Project} @else {1. Projekt}}@else{1. {{global.projects[0].projectname}}}</button>
 
         <button [class.active]="global.activeProject === 'El Pollo Loco'" 
         (click)="global.setActiveProject('El Pollo Loco')" 
@@ -16,11 +16,11 @@
 
         <button [class.active]="global.activeProject === 'Pokedex'" 
         (click)="global.setActiveProject('Pokedex')" 
-        class="button">@if(global.isMobile){@if (global.language === 'en') {3. Project} @else {3. Projekt}}@else{2. {{global.projects[2].projectname}}}</button>
+        class="button">@if(global.isMobile){@if (global.language === 'en') {3. Project} @else {3. Projekt}}@else{3. {{global.projects[2].projectname}}}</button>
 
         <button [class.active]="global.activeProject === 'Ongoing'" 
         (click)="global.setActiveProject('Ongoing')" 
-        class="button">@if(global.isMobile){@if (global.language === 'en') {4. Project} @else {4. Projekt}}@else{2. {{global.projects[3].projectname}}}</button>
+        class="button">@if(global.isMobile){@if (global.language === 'en') {4. Project} @else {4. Projekt}}@else{4. {{global.projects[3].projectname}}}</button>
 
       </nav>
   
@@ -82,7 +82,7 @@
               </div>              
             </div>
             <div class="technologie-mobil">              
-                <h2>{{global.activeProjectData?.projectname}}</h2>
+                <h3>{{global.activeProjectData?.projectname}}</h3>
               <div class="tool"> 
                 <p>@if(global.language === 'en'){Technologies: }@else{Technologien: } 
                     @for (spelledOutTech of global.activeProjectData?.technologiesSpelledOut; track $index) {

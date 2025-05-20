@@ -16,7 +16,7 @@ export class GlobalService {
 
   /** Global UI & state flags */
   language: string = 'en';
-  defaultLanguage: string = 'en';
+  defaultLanguage: string = '';
   isMobile: boolean = false;
   isTransitioning = false;
   isTransitioningLanguage = false;
@@ -77,4 +77,22 @@ export class GlobalService {
       this.isTransitioningLanguage = false;
     }, 200);
   }
+
+  /** Saves the chosen language to the local storage */
+   saveCurrentLanguage(language: string) {
+    this.language = language;
+    localStorage.setItem('language', language);
+    console.log('Language saved:', language);
+    
+   }
+
+   /** Loads the saved language from local storage or sets the default language */
+   setSavedLanguage() {
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+      this.language = savedLanguage;
+    } else {
+      this.language = this.defaultLanguage;
+    } 
+    }
 }

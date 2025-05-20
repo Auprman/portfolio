@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
   activeLink: string = '';
 
   /** Currently selected language in the navbar */
-  activeLinkLanguage: string = 'en';
+  activeLinkLanguage: string = this.global.language;
 
   /**
    * Constructor injecting a reference to the DOM element of this component.
@@ -48,6 +48,7 @@ export class NavbarComponent implements OnInit {
     this.global.switchLanguageAnimation(linkName);
     this.activeLinkLanguage = linkName;
     this.global.language = linkName;
+    this.global.saveCurrentLanguage(linkName);
   }
 
   /**

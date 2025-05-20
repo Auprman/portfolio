@@ -2,11 +2,13 @@ import { Component, HostListener,NgModule } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GlobalService } from '../global.service';
+import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterModule, ReactiveFormsModule,],
+  imports: [RouterOutlet,RouterModule, ReactiveFormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -24,6 +26,10 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.global.onResize();
+  }
+
+  ngOnInit() {
+    this.global.setSavedLanguage();
   }
 
 }

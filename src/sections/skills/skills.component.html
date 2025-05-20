@@ -1,5 +1,5 @@
 <section [class.fade-out]="global.isTransitioningLanguage"> 
-   @if (global.language === 'en') { <h1>My Skills</h1> } @else { <h1>Meine Fähigkeiten</h1> } 
+   @if (global.language === 'en') { <h2>My Skills</h2> } @else { <h2>Meine Fähigkeiten</h2> } 
     <div appScrollFade class="skills">          
         <div class="left-section-skills">
             @for (skill of skills; track $index) {

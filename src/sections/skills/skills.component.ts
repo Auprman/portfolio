@@ -38,11 +38,11 @@ export class SkillsComponent {
     { name: 'Firebase', path: '/assets/img/icons-skills/firebase.svg' },
     { name: 'Git', path: '/assets/img/icons-skills/git.svg' },
     { name: 'HTML', path: '/assets/img/icons-skills/html.svg' },
-    { name: 'Javascript', path: '/assets/img/icons-skills/js.svg' },
+    { name: 'JavaScript', path: '/assets/img/icons-skills/js.svg' },
     { name: 'Material Design', path: '/assets/img/icons-skills/material.svg' },
     { name: 'REST', path: '/assets/img/icons-skills/rest.svg' },
     { name: 'Scrum', path: '/assets/img/icons-skills/scrum.svg' },
-    { name: 'Typescript', path: '/assets/img/icons-skills/ts.svg' }
+    { name: 'TypeScript', path: '/assets/img/icons-skills/ts.svg' }
   ];
 
   /**
