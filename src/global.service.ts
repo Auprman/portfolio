@@ -16,7 +16,7 @@ export class GlobalService {
 
   /** Global UI & state flags */
   language: string = 'en';
-  defaultLanguage: string = '';
+  defaultLanguage: string = 'en';
   isMobile: boolean = false;
   isTransitioning = false;
   isTransitioningLanguage = false;
