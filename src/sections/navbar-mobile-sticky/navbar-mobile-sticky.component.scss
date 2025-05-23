@@ -20,6 +20,11 @@ nav {
   z-index: 1000;
   transform: translateY(-20px);
   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+
+  a{
+    display: flex;
+    text-decoration: none;
+  }
 }
 
 nav.fixed {

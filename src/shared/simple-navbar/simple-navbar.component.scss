@@ -16,6 +16,11 @@ $lightBlue : #89BCD9;
   transition: all 0.3s ease;
   z-index: 1000;
 
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   &.fixed {
     position: fixed;
     top: 0;

@@ -3,6 +3,8 @@ import { FooterComponent } from '../../shared/footer/footer.component';
 import { SimpleNavbarComponent } from '../../shared/simple-navbar/simple-navbar.component';
 import { GlobalService } from '../../global.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
 
 
 
@@ -11,7 +13,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-legal-notice',
-  imports: [FooterComponent, SimpleNavbarComponent,CommonModule],
+  imports: [FooterComponent, SimpleNavbarComponent,CommonModule, RouterLink],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss',
   

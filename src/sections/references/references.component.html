@@ -13,7 +13,7 @@
             <h3>{{ref.name}}</h3>
             <p>@if (global.language === 'en') {Project }@else {Projekt }<span>{{ref.project}}</span></p>
             <p>@if (global.language === 'en') {{{ref.referenceEn}}}@else {{{ref.referenceDe}}} </p>
-            @if(ref.link){<a href="{{ref.link}}">Linked in profil</a>}
+            @if(ref.link){<a href="{{ref.link}}" rel="noopener noreferrer" target="_blank">Linked in profil</a>}
         </div>
     }      
     </div>

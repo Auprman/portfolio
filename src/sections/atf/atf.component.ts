@@ -4,10 +4,11 @@ import { Subscription } from 'rxjs';
 import { LogoComponent } from '../../shared/logo/logo.component';
 import { NavbarMobileComponent } from '../navbar-mobile/navbar-mobile.component';
 import { GlobalService } from '../../global.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-atf',
-  imports: [LogoComponent, CommonModule, NavbarMobileComponent],
+  imports: [LogoComponent, CommonModule, NavbarMobileComponent, RouterLink],
   templateUrl: './atf.component.html',
   styleUrl: './atf.component.scss'
 })

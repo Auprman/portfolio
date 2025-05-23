@@ -1,12 +1,17 @@
 <nav [id]="'navbar-mobile-sticky'" 
      [class.fixed]="isFixed"
      [ngClass]="{ 'show-menu': isMobile && global.hamActive }">
-
-  <app-logo class="logo"
-            signSrc="/assets/img/logo/logo-dark.svg"
-            textColor="dark">
-  </app-logo>
-
+  
+    
+    <a href="#atf">
+        <app-logo               
+                class="logo"
+                signSrc="/assets/img/logo/logo-dark.svg"
+                textColor="dark">
+        </app-logo>
+    </a>
+      
+    
   <div (click)="showMenu()" [class.active]="global.hamActive" class="ham-menu">
     <span></span>
     <span></span>

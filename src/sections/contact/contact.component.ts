@@ -11,6 +11,7 @@ import {
 } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ScrollFadeDirective } from '../../shared/scroll-fade.directive';
+import { RouterLink } from '@angular/router';
 
 /**
  * Custom email validator to ensure TLD is present.
@@ -27,7 +28,7 @@ export function emailWithTLDValidator(control: AbstractControl): ValidationError
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, ReactiveFormsModule, ScrollFadeDirective],
+  imports: [CommonModule, ReactiveFormsModule, ScrollFadeDirective, RouterLink],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

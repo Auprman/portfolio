@@ -120,8 +120,8 @@
                     (mouseleave)="isCheckboxHovered = false"
                     [src]="getCheckboxImage()" alt="Checkbox state" 
                     />                
-                    @if (global.language === 'en') {<p>I've read the <a href="privacy"> privacy policy </a> and agree to the processing of my data as outlined.</p>} 
-                    @else {<p>Ich habe die <a href="privacy">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</p>}
+                    @if (global.language === 'en') {<p>I've read the <a routerLink="/legal-notice"> privacy policy </a> and agree to the processing of my data as outlined.</p>} 
+                    @else {<p>Ich habe die <a routerLink="/privacy">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</p>}
                   </label>
                 
                   <div class="error" *ngIf="hasPrivacyError()">
@@ -135,7 +135,7 @@
                 </div>
               </form>  
 
-              <a  href="#why-me" class="arrow-up-mobile">
+              <a  href="#atf" class="arrow-up-mobile">
                 <img src="/assets/img/arrows/arrow-up-default.png" alt="" class="icon default">
                 <img src="/assets/img/arrows/arrow-up-hover.png" alt="" class="icon hover">
               </a>

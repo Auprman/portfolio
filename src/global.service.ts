@@ -83,7 +83,6 @@ export class GlobalService {
    saveCurrentLanguage(language: string) {
     this.language = language;
     localStorage.setItem('language', language);
-    console.log('Language saved:', language);
     
    }
 

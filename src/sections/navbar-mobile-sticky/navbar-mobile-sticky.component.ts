@@ -3,10 +3,12 @@ import { GlobalService } from '../../global.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { LogoComponent } from '../../shared/logo/logo.component';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar-mobile-sticky',
-  imports: [CommonModule, LogoComponent],
+  imports: [CommonModule, LogoComponent, RouterLink],
   templateUrl: './navbar-mobile-sticky.component.html',
   styleUrl: './navbar-mobile-sticky.component.scss'
 })

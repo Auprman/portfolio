@@ -48,7 +48,7 @@ h2 {
 .left-section-skills {
     display: flex;
     flex-wrap: wrap;
-    width: 35%;
+    // width: 35%;
 
     p {
         font-family: 'Josefin Sans';
@@ -83,11 +83,14 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 16px;
+    padding: 8px 32px;
+    width: calc(100% / 5);
 }
 
 .skill-symbols {
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
     p {
         font-size: 14px !important;
@@ -149,6 +152,7 @@ h2 {
 
     .button {
         display: flex;
+        padding-bottom: 40px;
     }
 
     .button {
@@ -184,7 +188,7 @@ h2 {
             background-image: none;
         }
 
-        padding: 32px 0;
+        padding: 24px 0;
     }
 
     .skill-symbols {

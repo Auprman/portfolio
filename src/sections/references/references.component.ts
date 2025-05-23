@@ -70,7 +70,7 @@ export class ReferencesComponent {
         'Ich habe eines von Felix’ Projekten getestet und war wirklich beeindruckt. Ich kenne ihn persönlich und weiß, dass er zuverlässig, genau und sehr motiviert ist. Die Anwendung war klar strukturiert und mit viel Liebe zum Detail umgesetzt. Er arbeitet sich schnell in neue Themen ein – das hat man seinem Projekt deutlich angemerkt. Ich freue mich auf unsere Zusammenarbeit.',
 
 
-      link: '#why-me',
+      link: 'https://www.linkedin.com/in/mareike-karl/',
     },
     {
       name: 'Kerstin K.',

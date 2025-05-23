@@ -60,7 +60,6 @@ export class NavbarMobileComponent {
    */
   setActive(linkName: string) {
     this.activeLink = linkName;
-    console.log('activeLink', this.activeLink);
   }
 
   /**

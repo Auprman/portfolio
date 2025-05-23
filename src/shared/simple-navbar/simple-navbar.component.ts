@@ -2,11 +2,13 @@
 import { Component, ElementRef, HostListener, inject, OnInit } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
 import { GlobalService } from '../../global.service';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-simple-navbar',
   standalone: true,
-  imports: [LogoComponent],
+  imports: [LogoComponent, RouterLink],
   templateUrl: './simple-navbar.component.html',
   styleUrls: ['./simple-navbar.component.scss']
 })

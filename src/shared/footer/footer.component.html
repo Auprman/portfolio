@@ -2,12 +2,12 @@
   <footer>
     <div class="footer-content">
       <div class="left-section-wrapper" [class.fade-out]="global.isTransitioningLanguage">
-        <a href="legal-notice">@if (global.language === 'en') {Legal notice} @else {Impressum}</a>
+        <a routerLink="legal-notice">@if (global.language === 'en') {Legal notice} @else {Impressum}</a>
         <p>© Felix Oppermann 2025</p>
       </div>
 
 
-      <a href="#atf" class="logo">
+      <a routerLink="" class="logo">
         <app-logo 
         signSrc="/assets/img/logo/logo-dark.svg"
         textColor="dark">
@@ -42,8 +42,8 @@
       </div>     
 
       <div class="legal-notice-mobile" >
-       @if(global.isLegalNoticePage!= true){<a href="legal-notice">@if (global.language === 'en') {Legal notice} @else {Impressum}</a>}
-        <p> © Felix Oppermann 2025</p>
+       @if(global.isLegalNoticePage!= true){<a routerLink="/legal-notice" >@if (global.language === 'en') {Legal notice} @else {Impressum}</a>}
+       <p> © Felix Oppermann 2025</p>
       </div>
 
     </div>
